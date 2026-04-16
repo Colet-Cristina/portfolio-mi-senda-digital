@@ -29,11 +29,10 @@ body {
 
   &__container {
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
     align-items: center;
-    max-width: 75rem;
-    margin: 0 auto;
-    padding: 0 2rem;
+    padding: 1rem;
+    gap: 1rem;
   }
 
   &__title {
@@ -63,11 +62,7 @@ body {
 
 // --- HERO ---
 .hero {
-  min-height: 60vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 4rem 1.25rem;
+  padding: 1.5rem 1.25rem;
   text-align: center;
 
   &__greeting {
@@ -79,15 +74,14 @@ body {
 
   &__name {
     font-family: $font-japanese;
-    font-size: 3.5rem;
+    font-size: 2.5rem;
     color: $color-red;
     margin-bottom: 1.5rem;
   }
 
   &__description {
-    max-width: 37.5rem;
     margin: 0 auto 2.5rem;
-    font-size: 1.1rem;
+    font-size: 1rem;
   }
 
   &__btn {
@@ -98,34 +92,25 @@ body {
     text-decoration: none;
     border-radius: 0.3rem;
     font-weight: bold;
-    transition: all 0.3s ease;
-
-    &:hover {
-      background-color: transparent;
-      color: $color-green;
-      border: 0.125rem solid $color-green;
-    }
   }
 }
 
 // --- HERBOLARIO (PROJECTS) ---
 .herbalist {
   padding: 5rem 1.25rem;
-  max-width: 75rem;
-  margin: 0 auto;
 
   &__title {
     font-family: $font-japanese;
-    font-size: 2.5rem;
+
     color: $color-green;
     text-align: center;
-    margin-bottom: 3.5rem;
+    margin-bottom: 2rem;
   }
 
   &__list {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
-    gap: 2.5rem;
+    grid-template-columns: 1fr;
+    gap: 2rem;
     list-style: none;
   }
 }
@@ -136,6 +121,12 @@ body {
   border: 0.0625rem solid #e1e1e1;
   overflow: hidden;
   transition: transform 0.3s ease;
+  .project-card__img {
+    width: 100%;
+    height: 200px; // O la medida que prefieras en rem
+    object-fit: cover; // Para que la imagen no se deforme
+    display: block;
+  }
 
   &:hover {
     transform: translateY(-0.5rem);
@@ -177,4 +168,32 @@ body {
   border-radius: 0.3rem;
   font-size: 0.75rem;
   font-weight: bold;
+}
+@media (min-width: 768px) {
+  .header__container {
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 0 2rem;
+    height: 4.5rem;
+  }
+
+  .hero {
+    min-height: 60vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    &__name {
+      font-size: 3.5rem;
+    }
+    &__description {
+      font-size: 1.1rem;
+      max-width: 40rem;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+
+  .herbalist__list {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }

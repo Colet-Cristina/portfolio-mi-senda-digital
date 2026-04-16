@@ -1,6 +1,7 @@
 import "../styles/App.scss";
 import Header from "./Header";
 import Hero from "./Hero";
+import Herbalist from "./Herbalist";
 
 function App() {
   return (
@@ -9,6 +10,7 @@ function App() {
 
       <main className="main">
         <Hero />
+        <Herbalist />
       </main>
     </div>
   );
