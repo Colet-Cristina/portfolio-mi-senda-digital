@@ -1,0 +1,18 @@
+[
+  {
+    "id": 1,
+    "title": "Fauna Cards",
+    "description": "Explorador de fauna amenazada creado con JS Vanilla. Un ejercicio de maquetación limpia y lógica de filtrado básica.",
+    "tech": ["HTML5", "CSS3", "JavaScript"],
+    "link": "https://github.com/colet-cristina/fauna-cards-platzi-js",
+    "image": "https://colet-cristina.github.io/fauna-cards-platzi-js/assets/images/og-image.jpg"
+  },
+  {
+    "id": 2,
+    "title": "Harry Potter Universe",
+    "description": "Aplicación SPA desarrollada con React. Gestiona navegación con React Router, filtros complejos y persistencia de datos en LocalStorage.",
+    "tech": ["React", "React Router", "SASS", "API"],
+    "link": "https://github.com/Adalab/modulo-3-evaluacion-final-Colet-Cristina",
+    "image": "https://colet-cristina.github.io/modulo-3-evaluacion-final-Colet-Cristina/static/media/harry-potter-logo.jpg"
+  }
+]
