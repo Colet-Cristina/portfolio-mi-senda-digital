@@ -11,6 +11,9 @@ function Footer() {
         </p>
 
         <div className="footer__social">
+          <a href="mailto:coletcristina@gmail.com" className="footer__link">
+            Email
+          </a>
           <a
             href="https://github.com/colet-cristina"
             target="_blank"

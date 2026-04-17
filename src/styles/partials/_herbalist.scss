@@ -1,12 +1,18 @@
 .herbalist {
-  padding: 5rem 1.25rem;
+  padding: 0.5rem 1.25rem;
 
   &__title {
     font-family: $font-japanese;
-
     color: $color-green;
     text-align: center;
-    margin-bottom: 2rem;
+    margin-bottom: 0.5rem;
+  }
+
+  &__subtitle {
+    font-family: $font-japanese;
+    color: $color-green;
+    text-align: center;
+    margin-bottom: 1rem;
   }
 
   &__list {
@@ -20,9 +26,10 @@
 .project-card {
   background: $header-brown;
   border-radius: 0.75rem;
-  border: 0.0625rem solid #e1e1e1;
+  border: 0.07rem solid $color-green;
   overflow: hidden;
   transition: transform 0.3s ease;
+  box-shadow: $shadow-green;
 
   .project-card__img {
     width: 100%;
@@ -34,6 +41,7 @@
   &:hover {
     transform: translateY(-0.5rem);
     border-color: $color-red;
+    box-shadow: $shadow-red-hover;
   }
 
   &__content {

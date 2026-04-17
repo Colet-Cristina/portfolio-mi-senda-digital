@@ -3,10 +3,8 @@ import projectsData from "../services/projectsData.json";
 function Herbalist() {
   return (
     <section id="projects" className="herbalist js_herbalist">
-      <h2 className="herbalist__title">Mi Herbolario</h2>
-      <p className="herbalist__subtitle">
-        Selección de proyectos cultivados con código
-      </p>
+      <h2 className="herbalist__title">El Jardín Zen</h2>
+      <p className="herbalist__subtitle">Proyectos cultivados con código</p>
 
       <ul className="herbalist__list">
         {projectsData.map((project) => (
