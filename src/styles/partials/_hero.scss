@@ -20,15 +20,21 @@
     margin: 0 auto 2.5rem;
     font-size: 1rem;
   }
+  &__list {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+  }
 
-  &__btn {
-    display: inline-block;
-    padding: 0.8rem 2rem;
-    background-color: $color-green;
-    color: #fff;
+  &__link {
     text-decoration: none;
-    border-radius: 0.3rem;
+    color: $color-green;
     font-weight: bold;
+    transition: color 0.3s ease;
+
+    &:hover {
+      color: $color-red;
+    }
   }
 }
 // --- DESKTOP ---

@@ -1,3 +1,4 @@
+import { Link } from "react-router";
 function Hero() {
   return (
     <section id="about" className="hero js_hero">
@@ -9,11 +10,26 @@ function Hero() {
           crecimiento constante. Aquí podrás ver cómo cultivo soluciones
           digitales tras mi paso por Adalab.
         </p>
-        <div className="hero__actions">
-          <a href="#projects" className="hero__btn">
-            Explorar Herbolario
-          </a>
-        </div>
+
+        <nav className="hero__nav js_menu">
+          <ul className="hero__list">
+            <li className="hero__item">
+              <Link to="/" className="hero__link">
+                Raíces
+              </Link>
+            </li>
+            <li className="hero__item">
+              <Link to="/jardin-de-codigo" className="hero__link">
+                Jardín de Código
+              </Link>
+            </li>
+            <li className="hero__item">
+              <Link to="/arsenal" className="hero__link">
+                Arsenal
+              </Link>
+            </li>
+          </ul>
+        </nav>
       </div>
     </section>
   );

@@ -10,26 +10,6 @@ function Header() {
             Mi Senda Digital
           </Link>
         </h1>
-
-        <nav className="header__nav js_menu">
-          <ul className="header__list">
-            <li className="header__item">
-              <Link to="/" className="header__link">
-                Raíces
-              </Link>
-            </li>
-            <li className="header__item">
-              <Link to="//jardin-de-codigo" className="header__link">
-                Jardín de Código
-              </Link>
-            </li>
-            <li className="header__item">
-              <Link to="/arsenal" className="header__link">
-                Arsenal
-              </Link>
-            </li>
-          </ul>
-        </nav>
       </div>
     </header>
   );

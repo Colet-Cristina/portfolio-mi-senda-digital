@@ -17,23 +17,6 @@
     line-height: 4.5rem;
     font-size: 1.8rem;
   }
-
-  &__list {
-    display: flex;
-    list-style: none;
-    gap: 2rem;
-  }
-
-  &__link {
-    text-decoration: none;
-    color: $color-green;
-    font-weight: bold;
-    transition: color 0.3s ease;
-
-    &:hover {
-      color: $color-red;
-    }
-  }
 }
 
 // --- DESKTOP ---
