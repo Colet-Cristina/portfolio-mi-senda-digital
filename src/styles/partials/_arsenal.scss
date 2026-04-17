@@ -1,3 +1,14 @@
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 .arsenal {
   padding: 2rem;
   text-align: center;
@@ -14,10 +25,10 @@
     flex-wrap: wrap;
     gap: 1.5rem;
     list-style: none;
+    padding: 0;
   }
 
   &__item {
-    background-color: #fff;
     padding: 1.5rem;
     border-radius: 0.5rem;
     display: flex;
@@ -26,37 +37,122 @@
     width: 7.5rem;
     transition: all 0.3s ease;
     box-shadow: $shadow-main;
+    opacity: 0;
+    animation: fadeInUp 0.5s ease forwards;
 
     &:hover {
       transform: translateY(-0.3rem);
     }
 
-    &--orange:hover {
-      box-shadow: $shadow-main;
+    &--red {
+      background-color: rgba($color-html, 0.6);
+
+      .arsenal__icon {
+        color: darken($color-html, 15%);
+      }
+      &:hover {
+        box-shadow: 0 0.5rem 1rem rgba($color-html, 0.6);
+      }
     }
-    &--blue:hover {
-      box-shadow: $shadow-main;
+
+    &--blue {
+      background-color: rgba($color-css, 0.6);
+
+      .arsenal__icon {
+        color: darken($color-css, 10%);
+      }
+      &:hover {
+        box-shadow: 0 0.5rem 1rem rgba($color-css, 0.6);
+      }
     }
-    &--green:hover {
-      box-shadow: $shadow-green;
+
+    &--yellow {
+      background-color: rgba($color-js, 0.5);
+
+      .arsenal__icon {
+        color: darken($color-js, 30%);
+      }
+      &:hover {
+        box-shadow: 0 0.5rem 1rem rgba($color-js, 0.6);
+      }
     }
-    &--red:hover {
-      box-shadow: $shadow-red;
+
+    &--cyan {
+      background-color: rgba($color-react, 0.6);
+
+      .arsenal__icon {
+        color: darken($color-react, 20%);
+      }
+      &:hover {
+        box-shadow: 0 0.5rem 1rem rgba($color-react, 0.6);
+      }
     }
-    &--sakura:hover {
-      box-shadow: $shadow-sakura;
-      border: 0.06rem solid $color-sakura;
+
+    &--pink {
+      background-color: rgba($color-sass, 0.6);
+
+      .arsenal__icon {
+        color: darken($color-sass, 10%);
+      }
+      &:hover {
+        box-shadow: 0 0.5rem 1rem rgba($color-sass, 0.6);
+      }
+    }
+
+    &--green {
+      background-color: rgba($color-node, 0.6);
+
+      .arsenal__icon {
+        color: darken($color-node, 15%);
+      }
+      &:hover {
+        box-shadow: 0 0.5rem 1rem rgba($color-node, 0.6);
+      }
+    }
+
+    &--grey {
+      background-color: rgba($color-express, 0.6);
+
+      .arsenal__icon {
+        color: darken($color-express, 15%);
+      }
+      &:hover {
+        box-shadow: 0 0.5rem 1rem rgba($color-express, 0.6);
+      }
+    }
+
+    &--marine {
+      background-color: rgba($color-mysql, 0.6);
+
+      .arsenal__icon {
+        color: darken($color-mysql, 10%);
+      }
+      &:hover {
+        box-shadow: 0 0.5rem 1rem rgba($color-mysql, 0.6);
+      }
+    }
+
+    &--white {
+      background-color: rgba($color-git, 0.8);
+
+      .arsenal__icon {
+        color: darken($color-git, 50%);
+      }
+      &:hover {
+        box-shadow: 0 0.5rem 1rem rgba($color-git, 0.8);
+      }
     }
   }
 
   &__icon {
     font-size: 2.5rem;
     margin-bottom: 0.8rem;
-    color: $text-color;
+    transition: color 0.3s ease;
   }
 
   &__name {
     font-weight: bold;
     font-size: 0.9rem;
+    color: $text-color;
   }
 }

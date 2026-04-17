@@ -3,7 +3,7 @@
     "id": "html",
     "name": "HTML5",
     "icon": "fa-brands fa-html5",
-    "color": "orange"
+    "color": "red"
   },
   {
     "id": "css",
@@ -27,7 +27,7 @@
     "id": "sass",
     "name": "SASS",
     "icon": "fa-brands fa-sass",
-    "color": "red"
+    "color": "pink"
   },
   {
     "id": "node",
@@ -39,19 +39,19 @@
     "id": "express",
     "name": "Express JS",
     "icon": "fa-solid fa-server",
-    "color": "red"
+    "color": "grey"
   },
   {
     "id": "mysql",
     "name": "MySQL",
     "icon": "fa-solid fa-database",
-    "color": "blue"
+    "color": "marine"
   },
 
   {
     "id": "git",
     "name": "Git",
     "icon": "fa-brands fa-git-alt",
-    "color": "orange"
+    "color": "white"
   }
 ]
