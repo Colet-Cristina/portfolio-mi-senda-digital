@@ -2,6 +2,7 @@ import "../styles/App.scss";
 import Header from "./Header";
 import Hero from "./Hero";
 import Herbalist from "./Herbalist";
+import Footer from "./Footer";
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
         <Hero />
         <Herbalist />
       </main>
+      <Footer />
     </div>
   );
 }

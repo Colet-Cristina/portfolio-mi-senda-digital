@@ -1,0 +1,72 @@
+.herbalist {
+  padding: 5rem 1.25rem;
+
+  &__title {
+    font-family: $font-japanese;
+
+    color: $color-green;
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+
+  &__list {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    list-style: none;
+  }
+}
+
+.project-card {
+  background: $header-brown;
+  border-radius: 0.75rem;
+  border: 0.0625rem solid #e1e1e1;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+
+  .project-card__img {
+    width: 100%;
+    height: 10rem;
+    object-fit: cover;
+    display: block;
+  }
+
+  &:hover {
+    transform: translateY(-0.5rem);
+    border-color: $color-red;
+  }
+
+  &__content {
+    padding: 1.5rem;
+  }
+
+  &__name {
+    font-family: $font-japanese;
+    color: $text-color;
+    margin-bottom: 1rem;
+  }
+
+  &__tech-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  &__link {
+    color: $color-red;
+    text-decoration: none;
+    font-weight: bold;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+// --- DESKTOP ---
+
+@media (min-width: 768px) {
+  .herbalist__list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}

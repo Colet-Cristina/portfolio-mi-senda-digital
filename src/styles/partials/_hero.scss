@@ -1,0 +1,52 @@
+.hero {
+  padding: 1.5rem 1.25rem;
+  text-align: center;
+
+  &__greeting {
+    font-family: $font-japanese;
+    font-size: 1.5rem;
+    color: $color-green;
+    margin-bottom: 0.5rem;
+  }
+
+  &__name {
+    font-family: $font-japanese;
+    font-size: 2.5rem;
+    color: $color-red;
+    margin-bottom: 1.5rem;
+  }
+
+  &__description {
+    margin: 0 auto 2.5rem;
+    font-size: 1rem;
+  }
+
+  &__btn {
+    display: inline-block;
+    padding: 0.8rem 2rem;
+    background-color: $color-green;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 0.3rem;
+    font-weight: bold;
+  }
+}
+// --- DESKTOP ---
+
+@media (min-width: 768px) {
+  .hero {
+    min-height: 60vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    &__name {
+      font-size: 3.5rem;
+    }
+    &__description {
+      font-size: 1.1rem;
+      max-width: 40rem;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+}

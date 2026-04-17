@@ -1,0 +1,48 @@
+.header {
+  background-color: $header-brown;
+  border-bottom: solid 0.25rem $color-green;
+  box-shadow: 0 0.125rem 0.625rem rgba(0, 0, 0, 0.1);
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem;
+    gap: 1rem;
+  }
+
+  &__title {
+    font-family: $font-japanese;
+    color: $color-green;
+    line-height: 4.5rem;
+    font-size: 1.8rem;
+  }
+
+  &__list {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+  }
+
+  &__link {
+    text-decoration: none;
+    color: $color-green;
+    font-weight: bold;
+    transition: color 0.3s ease;
+
+    &:hover {
+      color: $color-red;
+    }
+  }
+}
+
+// --- DESKTOP ---
+
+@media (min-width: 768px) {
+  .header__container {
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 0 2rem;
+    height: 4.5rem;
+  }
+}
