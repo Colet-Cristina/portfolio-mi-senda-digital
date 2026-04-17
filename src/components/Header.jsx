@@ -1,27 +1,32 @@
 import "../styles/App.scss";
+import { Link } from "react-router";
 
 function Header() {
   return (
     <header className="header js_header">
       <div className="header__container">
-        <h1 className="header__title">Mi Senda Digital</h1>
+        <h1 className="header__title">
+          <Link to="/" className="header__title-link">
+            Mi Senda Digital
+          </Link>
+        </h1>
 
         <nav className="header__nav js_menu">
           <ul className="header__list">
             <li className="header__item">
-              <a href="#about" className="header__link">
+              <Link to="/" className="header__link">
                 Raíces
-              </a>
+              </Link>
             </li>
             <li className="header__item">
-              <a href="#projects" className="header__link">
-                Herbolario
-              </a>
+              <Link to="//jardin-de-codigo" className="header__link">
+                Jardín de Código
+              </Link>
             </li>
             <li className="header__item">
-              <a href="#arsenal" className="header__link">
+              <Link to="/arsenal" className="header__link">
                 Arsenal
-              </a>
+              </Link>
             </li>
           </ul>
         </nav>

@@ -1,0 +1,57 @@
+[
+  {
+    "id": "html",
+    "name": "HTML5",
+    "icon": "fa-brands fa-html5",
+    "color": "orange"
+  },
+  {
+    "id": "css",
+    "name": "CSS3",
+    "icon": "fa-brands fa-css3-alt",
+    "color": "blue"
+  },
+  {
+    "id": "js",
+    "name": "JavaScript",
+    "icon": "fa-brands fa-js",
+    "color": "yellow"
+  },
+  {
+    "id": "react",
+    "name": "React",
+    "icon": "fa-brands fa-react",
+    "color": "cyan"
+  },
+  {
+    "id": "sass",
+    "name": "SASS",
+    "icon": "fa-brands fa-sass",
+    "color": "red"
+  },
+  {
+    "id": "node",
+    "name": "Node JS",
+    "icon": "fa-brands fa-node-js",
+    "color": "green"
+  },
+  {
+    "id": "express",
+    "name": "Express JS",
+    "icon": "fa-solid fa-server",
+    "color": "red"
+  },
+  {
+    "id": "mysql",
+    "name": "MySQL",
+    "icon": "fa-solid fa-database",
+    "color": "blue"
+  },
+
+  {
+    "id": "git",
+    "name": "Git",
+    "icon": "fa-brands fa-git-alt",
+    "color": "orange"
+  }
+]

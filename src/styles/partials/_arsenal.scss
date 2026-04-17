@@ -1,0 +1,62 @@
+.arsenal {
+  padding: 2rem;
+  text-align: center;
+
+  &__title {
+    margin-bottom: 2rem;
+    font-family: $font-japanese;
+    color: $color-green;
+  }
+
+  &__list {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    list-style: none;
+  }
+
+  &__item {
+    background-color: #fff;
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 7.5rem;
+    transition: all 0.3s ease;
+    box-shadow: $shadow-main;
+
+    &:hover {
+      transform: translateY(-0.3rem);
+    }
+
+    &--orange:hover {
+      box-shadow: $shadow-main;
+    }
+    &--blue:hover {
+      box-shadow: $shadow-main;
+    }
+    &--green:hover {
+      box-shadow: $shadow-green;
+    }
+    &--red:hover {
+      box-shadow: $shadow-red;
+    }
+    &--sakura:hover {
+      box-shadow: $shadow-sakura;
+      border: 0.06rem solid $color-sakura;
+    }
+  }
+
+  &__icon {
+    font-size: 2.5rem;
+    margin-bottom: 0.8rem;
+    color: $text-color;
+  }
+
+  &__name {
+    font-weight: bold;
+    font-size: 0.9rem;
+  }
+}
