@@ -1,13 +1,15 @@
 $background-color: #f3d4a6;
+$color-water: #a8d5e2;
 $color-green: #2d5a27;
 $color-red: #c0392b;
 $color-sakura: #fec5e5;
+$color-stone: grey;
 $header-brown: #eebb6e;
 $text-color: #333333;
 $font-japanese: "Shippori Mincho", serif;
-$font-main: "Roboto", sans-serif;
+$font-body: "Lora", serif;
 
-// Tecnologías
+// Tech
 $color-main: #050505;
 $color-html: #e34f26;
 $color-css: #1572b6;
@@ -19,7 +21,9 @@ $color-express: #444444;
 $color-mysql: #00758f;
 $color-git: #f1edec;
 
-// Sombras tech
+//--- SHADOW ---
+
+// Tech
 $shadow-html: 0 0.5rem 1.5rem rgba($color-html, 0.3);
 $shadow-css: 0 0.5rem 1.5rem rgba($color-css, 0.3);
 $shadow-js: 0 0.5rem 1.5rem rgba($color-js, 0.3);
@@ -27,17 +31,16 @@ $shadow-react: 0 0.5rem 1.5rem rgba($color-react, 0.3);
 $shadow-sass: 0 0.5rem 1.5rem rgba($color-sass, 0.3);
 $shadow-node: 0 0.5rem 1.5rem rgba($color-node, 0.3);
 
-//--- SHADOW ---
-// Sombra suave
+// Suave
 $shadow-main: 0 4px 6px rgba(0, 0, 0, 0.1);
 
-// Sombras de colores
+// Colores
 $shadow-brown: 2px 2px 10px rgba(119, 89, 46, 0.15);
 $shadow-green: 10px 10px 20px rgba(45, 90, 39, 0.5);
 $shadow-red: 0 4px 12px rgba(192, 57, 43, 0.3);
 $shadow-sakura: 0 4px 12px rgba(254, 197, 229, 0.4);
 
-// Más intensa para el Hover
-$shadow-hover: 0 10px 15px rgba(0, 0, 0, 0.2);
+// Intensa para el Hover
+$shadow-hover: 0 10px 15px rgba(0, 0, 0, 0.4);
 $shadow-green-hover: 0 8px 20px rgba(45, 90, 39, 0.5);
 $shadow-red-hover: 10px 10px 20px rgba(192, 57, 43, 0.5);

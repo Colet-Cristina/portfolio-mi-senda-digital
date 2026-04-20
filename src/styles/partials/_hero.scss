@@ -1,5 +1,19 @@
 .hero {
-  padding: 0.5rem 1.25rem;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  background: linear-gradient(
+    to bottom,
+    $background-color 0%,
+    $background-color 30%,
+    mix($background-color, #a8d5e2, 10%) 60%,
+    #a8d5e2 85%
+  );
+
+  padding: 2rem 1.25rem;
   text-align: center;
 
   &__greeting {
@@ -17,23 +31,57 @@
   }
 
   &__description {
+    font-family: $font-body;
     margin: 0 auto 2.5rem;
     font-size: 1rem;
+    line-height: 1.6;
+    color: $color-green;
   }
   &__list {
     display: flex;
     list-style: none;
-    gap: 2rem;
+    justify-content: center;
+    align-items: center;
+    gap: 3rem;
+    margin-top: 2rem;
+    flex-wrap: wrap;
   }
 
   &__link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     text-decoration: none;
-    color: $color-green;
+    color: $background-color;
+    font-family: $font-body;
     font-weight: bold;
-    transition: color 0.3s ease;
+    font-style: italic;
+    padding: 1rem;
+    width: 9rem;
+    height: 9rem;
+    background-color: $color-stone;
+    border-radius: 60% 40% 70% 30% / 40% 50% 60% 70%;
+    transition: all 0.4s ease;
+    box-shadow: $shadow-hover;
 
     &:hover {
       color: $color-red;
+      background-color: $text-color;
+    }
+    &--roots {
+      margin-top: 0;
+      rotate: -3deg;
+    }
+
+    &--garden {
+      margin-top: 5rem;
+
+      rotate: 2deg;
+    }
+
+    &--arsenal {
+      margin-top: -2rem;
+      rotate: -1deg;
     }
   }
 }
@@ -41,6 +89,13 @@
 
 @media (min-width: 768px) {
   .hero {
+    background: linear-gradient(
+      to bottom,
+      $background-color 0%,
+      $background-color 30%,
+      mix($background-color, #a8d5e2, 30%) 60%,
+      #a8d5e2 85%
+    );
     min-height: 40vh;
     display: flex;
     flex-direction: column;

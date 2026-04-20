@@ -6,10 +6,6 @@ function Footer() {
   return (
     <footer className="footer js_footer">
       <div className="footer__container">
-        <p className="footer__copy">
-          &copy; {currentYear} - Desarrollado por Cristina Colet
-        </p>
-
         <div className="footer__social">
           <a href="mailto:coletcristina@gmail.com" className="footer__link">
             Email
@@ -31,6 +27,9 @@ function Footer() {
             LinkedIn
           </a>
         </div>
+        <p className="footer__copy">
+          &copy; {currentYear} - Desarrollado por Cristina Colet
+        </p>
       </div>
     </footer>
   );

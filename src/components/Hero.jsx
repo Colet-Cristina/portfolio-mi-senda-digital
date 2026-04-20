@@ -6,25 +6,29 @@ function Hero() {
         <h2 className="hero__greeting">Bienvenida a mi dojo digital</h2>
         <h3 className="hero__name">Soy Cristina Colet.</h3>
         <p className="hero__description">
-          Al igual que en un jardín Zen, busco un código limpio, el orden y el
-          crecimiento constante. Aquí podrás ver cómo cultivo soluciones
-          digitales tras mi paso por Adalab.
+          Inspirada en la calma de un jardín Zen, me esfuerzo por escribir
+          código limpio y ordenado, basándome en la disciplina y el aprendizaje
+          de una onna-musha; un camino que inicié en Adalab y que sigo
+          recorriendo cada día.
         </p>
 
         <nav className="hero__nav js_menu">
           <ul className="hero__list">
             <li className="hero__item">
-              <Link to="/" className="hero__link">
+              <Link to="/" className="hero__link hero__link--roots">
                 Raíces
               </Link>
             </li>
             <li className="hero__item">
-              <Link to="/jardin-de-codigo" className="hero__link">
+              <Link
+                to="/jardin-de-codigo"
+                className="hero__link hero__link--garden"
+              >
                 Jardín de Código
               </Link>
             </li>
             <li className="hero__item">
-              <Link to="/arsenal" className="hero__link">
+              <Link to="/arsenal" className="hero__link hero__link--arsenal">
                 Arsenal
               </Link>
             </li>

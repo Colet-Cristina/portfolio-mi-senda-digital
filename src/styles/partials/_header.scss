@@ -1,21 +1,35 @@
 .header {
-  background-color: $header-brown;
-  border-bottom: solid 0.25rem $color-green;
+  background: $header-brown;
+  border-bottom: solid 0.05rem $color-green;
   box-shadow: 0 0.125rem 0.625rem rgba(0, 0, 0, 0.1);
 
   &__container {
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
     padding: 1rem;
     gap: 1rem;
+  }
+  &__seal {
+    height: 3rem;
+    width: auto;
+
+    opacity: 0.9;
+    transform: rotate(-2deg); // Ese toque artesanal que hablábamos
   }
 
   &__title {
     font-family: $font-japanese;
-    color: $color-green;
-    line-height: 4.5rem;
+    color: $color-red;
+    text-align: center;
     font-size: 1.8rem;
+    line-height: 1.2;
+  }
+
+  &__link {
+    text-decoration: none;
+    color: inherit;
   }
 }
 
@@ -24,7 +38,6 @@
 @media (min-width: 768px) {
   .header__container {
     flex-direction: row;
-    justify-content: space-between;
     padding: 0 2rem;
     height: 4.5rem;
   }
