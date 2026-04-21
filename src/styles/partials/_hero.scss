@@ -1,10 +1,46 @@
+/* ===================== HERO SECTION ===================== */
+// Sección principal con efectos de jardín zen (arena y agua)
+
+// --- ANIMACIONES ---
+// Piedras
+@keyframes fadeInStone {
+  0% {
+    opacity: 0;
+    filter: blur(10px);
+  }
+  100% {
+    opacity: 1;
+    filter: blur(0);
+  }
+}
+
+// Ondas
+@keyframes waveFlow {
+  0% {
+    background-position:
+      0% 0%,
+      0% 0%;
+  }
+  100% {
+    background-position:
+      100px 0%,
+      -100px 0%;
+  }
+}
 .hero {
+  // Layout: Centrado de contenido con Flexbox
   flex-grow: 1;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 
+  // Apilamiento para capas decorativas
+  position: relative;
+  overflow: hidden;
+  padding: 2rem 1.25rem;
+  text-align: center;
+  // Fondo base: Transición cromática de arena a agua
   background: linear-gradient(
     to bottom,
     $background-color 0%,
@@ -13,8 +49,89 @@
     #a8d5e2 85%
   );
 
-  padding: 2rem 1.25rem;
-  text-align: center;
+  /* =========== CAPA DE TEXTURA (GRANO) =========== */
+  // Simula la arena
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image:
+      repeating-linear-gradient(
+        45deg,
+        rgba(0, 0, 0, 0.05) 0.5px,
+        transparent 1px,
+        transparent 2px
+      ),
+      repeating-linear-gradient(
+        -45deg,
+        rgba(0, 0, 0, 0.05) 0.5px,
+        transparent 1px,
+        transparent 2px
+      );
+    background-size: 4px 4px;
+    opacity: 0.15;
+    z-index: 1;
+    pointer-events: none;
+  }
+  /* =========== CAPA DE ONDAS =========== */
+  // Efecto de dunas arena y corrientes de agua
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+    background-image: 
+      // Ondas de arena
+      repeating-linear-gradient(
+        170deg,
+        rgba($color-green, 0.07) 0px,
+        rgba($color-green, 0.07) 1px,
+        transparent 1px,
+        transparent 12px
+      ),
+      // Ondas de agua
+      repeating-linear-gradient(
+          162deg,
+          rgba(#fff, 0.15) 0px,
+          rgba(#fff, 0.15) 2px,
+          transparent 1.5px,
+          transparent 18px
+        );
+    // Máscara degradado suaviza la transición
+    -webkit-mask-image: linear-gradient(
+      to bottom,
+      black 10%,
+      transparent 45%,
+      transparent 55%,
+      black 90%
+    );
+    mask-image: linear-gradient(
+      to bottom,
+      black 10%,
+      transparent 45%,
+      transparent 55%,
+      black 90%
+    );
+
+    z-index: 1;
+    pointer-events: none;
+    animation: waveFlow 5s linear infinite;
+  }
+
+  /* =========== CONTENIDO =========== */
+  &__greeting,
+  &__name,
+  &__description,
+  &__list {
+    position: relative;
+    z-index: 2;
+  }
 
   &__greeting {
     font-family: $font-japanese;
@@ -37,6 +154,7 @@
     line-height: 1.6;
     color: $color-green;
   }
+
   &__list {
     display: flex;
     list-style: none;
@@ -47,6 +165,7 @@
     flex-wrap: wrap;
   }
 
+  /* =========== PIEDRAS =========== */
   &__link {
     display: flex;
     align-items: center;
@@ -64,29 +183,38 @@
     transition: all 0.4s ease;
     box-shadow: $shadow-hover;
 
+    animation: fadeInStone 1.5s ease-in-out both;
+    &--roots {
+      animation-delay: 1.8s;
+    }
+    &--garden {
+      animation-delay: 2.4s;
+    }
+    &--arsenal {
+      animation-delay: 3s;
+    }
+
     &:hover {
       color: $color-red;
       background-color: $text-color;
     }
+
     &--roots {
       margin-top: 0;
       rotate: -3deg;
     }
-
     &--garden {
       margin-top: 5rem;
-
       rotate: 2deg;
     }
-
     &--arsenal {
       margin-top: -2rem;
       rotate: -1deg;
     }
   }
 }
-// --- DESKTOP ---
 
+/* =========== MEDIA QUERIES (DESKTOP) =========== */
 @media (min-width: 768px) {
   .hero {
     background: linear-gradient(
@@ -96,13 +224,13 @@
       mix($background-color, #a8d5e2, 30%) 60%,
       #a8d5e2 85%
     );
-    min-height: 40vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+
+    min-height: 60vh;
+
     &__name {
       font-size: 3.5rem;
     }
+
     &__description {
       font-size: 1.1rem;
       max-width: 40rem;
