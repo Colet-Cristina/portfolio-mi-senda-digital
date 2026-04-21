@@ -3,8 +3,8 @@ function Hero() {
   return (
     <section id="about" className="hero js_hero">
       <div className="hero__content">
-        <h2 className="hero__greeting">Bienvenida a mi dojo digital</h2>
-        <h3 className="hero__name">Soy Cristina Colet.</h3>
+        <h3 className="hero__greeting">Bienvenida a mi dojo digital</h3>
+        <h2 className="hero__name">Soy Cristina Colet.</h2>
         <p className="hero__description">
           Inspirada en la calma de un jardín Zen, me esfuerzo por escribir
           código limpio y ordenado, basándome en la disciplina y el aprendizaje
