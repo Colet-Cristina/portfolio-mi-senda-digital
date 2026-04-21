@@ -19,7 +19,7 @@ function Footer() {
             GitHub
           </a>
           <a
-            href="https://www.linkedin.com/in/tu-perfil"
+            href="https://linkedin.com/in/cristina-colet-corredera/"
             target="_blank"
             rel="noreferrer"
             className="footer__link"

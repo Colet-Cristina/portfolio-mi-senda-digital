@@ -10,11 +10,39 @@ function Header() {
           alt="Sello tradicional japonés con el nombre de Cristina"
           className="header__seal"
         />
+
         <h1 className="header__title">
-          <Link to="/" className="header__link">
-            Mi Senda Digital
+          <Link to="/" className="header__title-link">
+            Mi camino de código
           </Link>
         </h1>
+
+        <nav className="header__social">
+          <a
+            href="mailto:coletcristina@gmail.com"
+            className="header__social-link"
+          >
+            <img src="/email.png" alt="Email" className="header__social-icon" />
+          </a>
+
+          <a
+            href="https://github.com/colet-cristina"
+            target="_blank"
+            rel="noreferrer"
+            className="header__social-link"
+          >
+            <img src="/git.png" alt="GitHub" className="header__social-icon" />
+          </a>
+
+          <a
+            href="https://linkedin.com/in/cristina-colet-corredera/"
+            target="_blank"
+            rel="noreferrer"
+            className="header__social-link"
+          >
+            <img src="/in.png" alt="LinkedIn" className="header__social-icon" />
+          </a>
+        </nav>
       </div>
     </header>
   );

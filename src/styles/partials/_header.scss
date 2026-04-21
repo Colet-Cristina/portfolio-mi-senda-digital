@@ -7,29 +7,42 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-    padding: 1rem;
-    gap: 1rem;
+    padding: 0.7rem;
   }
-  &__seal {
-    height: 3rem;
-    width: auto;
 
-    opacity: 0.9;
-    transform: rotate(-2deg); // Ese toque artesanal que hablábamos
+  &__seal {
+    height: 3.5rem;
+    width: auto;
   }
 
   &__title {
-    font-family: $font-japanese;
-    color: $color-red;
+    flex: 1;
     text-align: center;
-    font-size: 1.8rem;
-    line-height: 1.2;
+    margin: 0;
+
+    &-link {
+      text-decoration: none;
+      font-family: $font-japanese;
+      font-size: 1.6rem;
+      color: $color-red;
+    }
   }
 
-  &__link {
-    text-decoration: none;
-    color: inherit;
+  &__social {
+    display: flex;
+    gap: 1.2rem;
+    flex: 0 0 30px;
+    justify-content: flex-end;
+
+    &-icon {
+      height: 1.8rem;
+      width: auto;
+      transition: transform 0.3s ease;
+
+      &:hover {
+        transform: scale(1.15) rotate(5deg);
+      }
+    }
   }
 }
 
@@ -38,7 +51,7 @@
 @media (min-width: 768px) {
   .header__container {
     flex-direction: row;
-    padding: 0 2rem;
+    padding: 0 5rem;
     height: 4.5rem;
   }
 }
