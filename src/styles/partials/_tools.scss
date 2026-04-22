@@ -9,7 +9,7 @@
   }
 }
 
-.arsenal {
+.tools {
   padding: 2rem;
   text-align: center;
 
@@ -47,7 +47,7 @@
     &--red {
       background-color: rgba($color-html, 0.6);
 
-      .arsenal__icon {
+      .tools__icon {
         color: darken($color-html, 15%);
       }
       &:hover {
@@ -58,7 +58,7 @@
     &--blue {
       background-color: rgba($color-css, 0.6);
 
-      .arsenal__icon {
+      .tools__icon {
         color: darken($color-css, 10%);
       }
       &:hover {
@@ -69,7 +69,7 @@
     &--yellow {
       background-color: rgba($color-js, 0.5);
 
-      .arsenal__icon {
+      .tools__icon {
         color: darken($color-js, 30%);
       }
       &:hover {
@@ -80,7 +80,7 @@
     &--cyan {
       background-color: rgba($color-react, 0.6);
 
-      .arsenal__icon {
+      .tools__icon {
         color: darken($color-react, 20%);
       }
       &:hover {
@@ -91,7 +91,7 @@
     &--pink {
       background-color: rgba($color-sass, 0.6);
 
-      .arsenal__icon {
+      .tools__icon {
         color: darken($color-sass, 10%);
       }
       &:hover {
@@ -102,7 +102,7 @@
     &--green {
       background-color: rgba($color-node, 0.6);
 
-      .arsenal__icon {
+      .tools__icon {
         color: darken($color-node, 15%);
       }
       &:hover {
@@ -113,7 +113,7 @@
     &--grey {
       background-color: rgba($color-express, 0.6);
 
-      .arsenal__icon {
+      .tools__icon {
         color: darken($color-express, 15%);
       }
       &:hover {
@@ -124,7 +124,7 @@
     &--marine {
       background-color: rgba($color-mysql, 0.6);
 
-      .arsenal__icon {
+      .tools__icon {
         color: darken($color-mysql, 10%);
       }
       &:hover {
@@ -135,7 +135,7 @@
     &--white {
       background-color: rgba($color-git, 0.8);
 
-      .arsenal__icon {
+      .tools__icon {
         color: darken($color-git, 50%);
       }
       &:hover {

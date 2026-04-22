@@ -15,7 +15,11 @@ function Hero() {
         <nav className="hero__nav js_menu">
           <ul className="hero__list">
             <li className="hero__item">
-              <Link to="/" className="hero__link hero__link--roots">
+              <Link
+                to="/"
+                className="hero__link hero__link--roots"
+                aria-label="Sobre mí: mis raíces"
+              >
                 Raíces
               </Link>
             </li>
@@ -23,13 +27,18 @@ function Hero() {
               <Link
                 to="/jardin-de-codigo"
                 className="hero__link hero__link--garden"
+                aria-label="Mis proyectos: jardín de código"
               >
                 Jardín de Código
               </Link>
             </li>
             <li className="hero__item">
-              <Link to="/arsenal" className="hero__link hero__link--arsenal">
-                Arsenal
+              <Link
+                to="/tools"
+                className="hero__link hero__link--tools"
+                aria-label="Mis tecnologías y herramientas de desarrollo"
+              >
+                Herramientas
               </Link>
             </li>
           </ul>

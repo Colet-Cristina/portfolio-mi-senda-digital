@@ -13,7 +13,7 @@ function Header() {
 
         <h1 className="header__title">
           <Link to="/" className="header__title-link">
-            Mi camino de código
+            Semillas de Código
           </Link>
         </h1>
 

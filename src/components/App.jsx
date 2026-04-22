@@ -5,7 +5,7 @@ import { Routes, Route } from "react-router";
 import Header from "./Header";
 import Hero from "./Hero";
 import Herbalist from "./Herbalist";
-import Arsenal from "./Arsenal";
+import tools from "./tools";
 import Footer from "./Footer";
 
 function App() {
@@ -19,7 +19,7 @@ function App() {
 
           <Route path="/jardin-de-codigo" element={<Herbalist />} />
 
-          <Route path="/arsenal" element={<Arsenal />} />
+          <Route path="/tools" element={<tools />} />
         </Routes>
       </main>
 
