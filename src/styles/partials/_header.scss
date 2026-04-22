@@ -1,4 +1,7 @@
+/* ===================== HEADER SECTION ===================== */
+
 // --- ANIMATIONS ---
+// Efecto de un "estampado" tradicional japonés (Hanko)
 @keyframes hankoStamp {
   0% {
     opacity: 0;
@@ -11,25 +14,37 @@
   100% {
     opacity: 1;
     transform: scale(1) rotate(-0.5deg);
-    filter: blur(0);
   }
 }
+// Animación específica para el sello, rotación
 @keyframes sealStamp {
   0% {
     opacity: 0;
     transform: scale(3) rotate(-20deg);
   }
-  70% {
-    opacity: 1;
-    transform: scale(0.9) rotate(-12deg);
-  }
   100% {
     opacity: 1;
     transform: scale(1) rotate(-10deg);
-    filter: blur(0);
   }
 }
-// --- HEADER ---
+
+// Efecto pergamino
+@keyframes openScroll {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 100%;
+  }
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+// ========== HEADER ==========
 .header {
   background: $header-brown;
   border-bottom: solid 0.05rem $color-green;
@@ -45,6 +60,7 @@
     gap: 1rem;
   }
 
+  /* --- ELEMENTOS --- */
   &__seal {
     grid-column: 1;
     height: 2.5rem;
@@ -56,28 +72,50 @@
 
   &__title {
     grid-column: 2;
-    justify-self: center;
+    justify-self: start;
     margin: 0;
 
     &-link {
-      display: inline-block;
+      display: inline-flex;
+      justify-content: flex-start;
       text-decoration: none;
-      font-family: $font-japanese;
-      font-size: 1.5rem;
-      color: $color-red;
-      font-weight: bold;
-      border: 2px solid $color-red;
-      padding: 0.2rem 0.6rem;
-      white-space: nowrap;
 
-      opacity: 0;
-      animation: hankoStamp 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275)
-        forwards;
-      animation-delay: 0.2s;
+      // Estilos de los RODILLOS
 
-      &:hover {
-        transform: rotate(-0.5deg) scale(1.05);
-        transition: all 0.3s ease;
+      .scroll__roller {
+        width: 0.8rem;
+
+        background: $color-red;
+        border: 1.5px solid $color-red;
+        flex-shrink: 0;
+        z-index: 2;
+        border-radius: 0.2rem;
+      }
+
+      .scroll__content {
+        background-color: $background-color;
+        overflow: hidden;
+        white-space: nowrap;
+        width: 0;
+
+        animation: openScroll 1.2s cubic-bezier(0.45, 0.05, 0.55, 0.95) forwards;
+        animation-delay: 2.5s;
+
+        border-top: 2px solid $color-red;
+        border-bottom: 2px solid $color-red;
+        box-shadow: inset 10px 0 10px -5px rgba(0, 0, 0, 0.2);
+      }
+
+      .scroll__text {
+        font-family: $font-japanese;
+        font-size: 1.5rem;
+        color: $color-red;
+        font-weight: bold;
+        padding: 0 1rem;
+        opacity: 0;
+
+        animation: fadeIn 0.5s forwards;
+        animation-delay: 2s;
       }
     }
   }
@@ -99,7 +137,7 @@
       width: auto;
       opacity: 0;
       animation: hankoStamp 0.8s ease-out forwards;
-
+      // Entrada escalonada de los iconos sociales
       &:nth-child(1) {
         animation-delay: 1.8s;
       } // Email
@@ -119,7 +157,7 @@
   }
 }
 
-// --- DESKTOP ---
+// ========== DESKTOP ==========
 @media (min-width: 768px) {
   .header {
     &__container {

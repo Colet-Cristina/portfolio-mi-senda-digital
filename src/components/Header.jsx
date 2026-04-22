@@ -12,8 +12,14 @@ function Header() {
         />
 
         <h1 className="header__title">
-          <Link to="/" className="header__title-link">
-            Semillas de Código
+          <Link to="/" className="header__title-link scroll">
+            <span className="scroll__roller scroll__roller--left"></span>
+
+            <span className="scroll__content">
+              <span className="scroll__text">Semillas de Código</span>
+            </span>
+
+            <span className="scroll__roller scroll__roller--right"></span>
           </Link>
         </h1>
 
