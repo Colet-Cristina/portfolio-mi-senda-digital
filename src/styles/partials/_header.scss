@@ -90,6 +90,10 @@
     justify-content: center;
     align-items: center;
 
+    &:hover {
+      transform: scale(1.05);
+    }
+
     &-icon {
       height: 1.5rem;
       width: auto;
@@ -109,6 +113,7 @@
       &:hover {
         transform: scale(1.2) rotate(5deg);
         transition: transform 0.3s ease;
+        transform: scale(1.05);
       }
     }
   }

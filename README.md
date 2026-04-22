@@ -27,7 +27,7 @@ _Selección de proyectos cultivados con mimo y código limpio._
 
 ---
 
-## 👤 Sobre mí
+## 👩🏻‍💻 Sobre mí
 
 Mi camino hacia el desarrollo web no ha sido una línea recta, pero cada etapa me ha dado una herramienta que hoy aplico al terminal.
 
