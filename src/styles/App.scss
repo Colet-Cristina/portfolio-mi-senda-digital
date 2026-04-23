@@ -1,11 +1,15 @@
-// --- VARIABLES ---
+// Core
+@import "./core/variables";
+@import "./core/animations";
 
-@import "./partials/variables";
-@import "./partials/header";
-@import "./partials/hero";
-@import "./partials/herbalist";
-@import "./partials/tools";
-@import "./partials/footer";
+// Layout
+@import "./layout/header";
+@import "./layout/footer";
+
+// Pages
+@import "./pages/hero";
+@import "./pages/herbalist";
+@import "./pages/tools";
 
 // --- RESET ---
 * {

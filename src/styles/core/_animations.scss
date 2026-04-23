@@ -1,0 +1,88 @@
+// ======================= HEADER =======================
+// Efecto de un "estampado" tradicional japonés (Hanko)
+@keyframes hankoStamp {
+  0% {
+    opacity: 0;
+    transform: scale(3) rotate(-15deg);
+  }
+  70% {
+    opacity: 1;
+    transform: scale(0.9) rotate(-10deg);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) rotate(-0.5deg);
+  }
+}
+// Animación específica para el sello, rotación
+@keyframes sealStamp {
+  0% {
+    opacity: 0;
+    transform: scale(3) rotate(-20deg);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) rotate(-10deg);
+  }
+}
+
+// Efecto pergamino
+@keyframes openScroll {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 100%;
+  }
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+// --- HERO  ---
+// Piedras
+@keyframes fadeInStone {
+  0% {
+    opacity: 0;
+    filter: blur(10px);
+  }
+  100% {
+    opacity: 1;
+    filter: blur(0);
+  }
+}
+
+// Ondas
+@keyframes waveFlow {
+  0% {
+    background-position:
+      0% 0%,
+      0% 0%;
+  }
+  100% {
+    background-position:
+      100px 0%,
+      -100px 0%;
+  }
+}
+
+// ======================= HERBALIST =======================
+
+@keyframes sakuraFall {
+  0% {
+    top: -10%;
+    transform: translateX(0) rotate(0deg);
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.8;
+  }
+  100% {
+    top: 110%;
+    // El translateX(100px) hace que caigan en diagonal, como con brisa
+    transform: translateX(6.25rem) rotate(720deg);
+    opacity: 0;
+  }
+}

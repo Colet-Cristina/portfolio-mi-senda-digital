@@ -1,32 +1,6 @@
 /* ===================== HERO SECTION ===================== */
 // Sección principal con efectos de jardín zen (arena y agua)
 
-// --- ANIMACIONES ---
-// Piedras
-@keyframes fadeInStone {
-  0% {
-    opacity: 0;
-    filter: blur(10px);
-  }
-  100% {
-    opacity: 1;
-    filter: blur(0);
-  }
-}
-
-// Ondas
-@keyframes waveFlow {
-  0% {
-    background-position:
-      0% 0%,
-      0% 0%;
-  }
-  100% {
-    background-position:
-      100px 0%,
-      -100px 0%;
-  }
-}
 .hero {
   // Layout: Centrado de contenido con Flexbox
   flex-grow: 1;
@@ -133,18 +107,18 @@
     z-index: 2;
   }
 
-  &__greeting {
-    font-family: $font-japanese;
-    font-size: 1.5rem;
-    color: $color-green;
-    margin-bottom: 0.5rem;
-  }
-
   &__name {
     font-family: $font-japanese;
     font-size: 2.5rem;
     color: $color-red;
     margin-bottom: 1.5rem;
+  }
+
+  &__greeting {
+    font-family: $font-japanese;
+    font-size: 1.5rem;
+    color: $color-darkGreen;
+    margin-bottom: 0.5rem;
   }
 
   &__description {
@@ -197,7 +171,7 @@
     border-bottom: 0.3rem solid rgba(0, 0, 0, 0.2);
     border-radius: 60% 40% 70% 30% / 40% 50% 60% 70%;
     transition: all 0.4s ease;
-    box-shadow: $shadow-hover;
+    box-shadow: $shadow-strong;
     animation: fadeInStone 1.5s ease-in-out both;
 
     &--roots {

@@ -3,6 +3,14 @@ import projectsData from "../services/projectsData.json";
 function Herbalist() {
   return (
     <section id="projects" className="herbalist js_herbalist">
+      <div className="sakura-branch"></div>
+      <div className="falling-petals">
+        <span className="petal"></span>
+        <span className="petal"></span>
+        <span className="petal"></span>
+        <span className="petal"></span>
+      </div>
+
       <h2 className="herbalist__title">El Jardín Zen</h2>
       <p className="herbalist__subtitle">Proyectos cultivados con código</p>
 
@@ -38,7 +46,11 @@ function Herbalist() {
                   target="_blank"
                   rel="noreferrer"
                 >
-                  Explorar Código
+                  <img
+                    src="/git.png"
+                    alt="GitHub"
+                    className="project-card__social"
+                  />
                 </a>
               </div>
             </article>
