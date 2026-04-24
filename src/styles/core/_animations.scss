@@ -1,20 +1,21 @@
-// ======================= HEADER =======================
-// Efecto de un "estampado" tradicional japonés (Hanko)
+/* ==========  ANIMACIONES (Keyframes) ========== */
+
+// --- HEADER: Sellos ---
 @keyframes hankoStamp {
   0% {
     opacity: 0;
-    transform: scale(3) rotate(-15deg);
+    transform: scale(3) rotate(-15deg); // Efecto de impacto desde lejos
   }
   70% {
     opacity: 1;
-    transform: scale(0.9) rotate(-10deg);
+    transform: scale(0.9) rotate(-10deg); // Rebote al tocar el "papel"
   }
   100% {
     opacity: 1;
     transform: scale(1) rotate(-0.5deg);
   }
 }
-// Animación específica para el sello, rotación
+
 @keyframes sealStamp {
   0% {
     opacity: 0;
@@ -26,14 +27,14 @@
   }
 }
 
-// Efecto pergamino
+// --- Efectos de Pergamino
 @keyframes openScroll {
   0% {
     width: 0;
   }
   100% {
     width: 100%;
-  }
+  } // Apertura lateral
 }
 
 @keyframes fadeIn {
@@ -41,12 +42,12 @@
     opacity: 1;
   }
 }
-// --- HERO  ---
-// Piedras
+
+// --- HERO ---
 @keyframes fadeInStone {
   0% {
     opacity: 0;
-    filter: blur(10px);
+    filter: blur(0.625rem); // Comienzo desenfocado
   }
   100% {
     opacity: 1;
@@ -54,7 +55,6 @@
   }
 }
 
-// Ondas
 @keyframes waveFlow {
   0% {
     background-position:
@@ -63,13 +63,12 @@
   }
   100% {
     background-position:
-      100px 0%,
-      -100px 0%;
-  }
+      6.25rem 0%,
+      -6.25rem 0%;
+  } // Movimiento de agua
 }
 
-// ======================= HERBALIST =======================
-
+// --- GARDEN: Efectos Ambientales ---
 @keyframes sakuraFall {
   0% {
     top: -10%;
@@ -81,8 +80,17 @@
   }
   100% {
     top: 110%;
-    // El translateX(100px) hace que caigan en diagonal, como con brisa
-    transform: translateX(6.25rem) rotate(720deg);
+    transform: translateX(6.25rem) rotate(720deg); // Caída diagonal con rotación
     opacity: 0;
+  }
+}
+
+@keyframes plantSway {
+  0%,
+  100% {
+    transform: rotate(-1.5deg);
+  }
+  50% {
+    transform: rotate(1.5deg);
   }
 }

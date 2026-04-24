@@ -9,8 +9,8 @@
   },
   {
     "id": 2,
-    "title": "Harry Potter Universe",
-    "description": "Aplicación SPA desarrollada con React. Gestiona navegación con React Router, filtros complejos y persistencia de datos en LocalStorage.",
+    "title": "Harry Potter",
+    "description": "JS Vanilla Explorer: Explorador dinámico con juego de memoria integrado",
     "tech": ["React", "React Router", "SASS", "API"],
     "link": "https://github.com/Adalab/modulo-3-evaluacion-final-Colet-Cristina",
     "image": "/harry.jpg"

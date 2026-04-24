@@ -1,8 +1,10 @@
+/* --- FOOTER: Estructura y Estética --- */
 .footer {
+  // Fondo con degradado que une los colores agua y sakura
   background: linear-gradient(to bottom, #a8d5e2, $color-sakura 40%);
   padding: 2.5rem 1rem;
   text-align: center;
-  letter-spacing: 1px;
+  letter-spacing: 0.0625rem;
 
   &__container {
     display: flex;
@@ -11,12 +13,14 @@
     justify-content: flex-end;
   }
 
+  // Estilo compartido para textos y enlaces
   &__copy,
   &__link {
     color: darken($color-green, 15%);
     font-size: 0.9rem;
     text-decoration: none;
     font-weight: bold;
+    transition: color 0.3s ease;
   }
 
   &__social {
@@ -30,6 +34,7 @@
   }
 }
 
+/* --- COMPONENTES AUXILIARES --- */
 .tech-tag {
   background-color: rgba($color-green, 0.1);
   color: $color-green;
@@ -39,16 +44,17 @@
   font-weight: bold;
 }
 
-// --- DESKTOP ---
-
+/* --- RESPONSIVE: Desktop --- */
 @media (min-width: 768px) {
   .footer {
     padding-top: 3rem;
-  }
-  .footer__container {
-    flex-direction: row;
-    justify-content: space-between;
-    margin: 0 auto;
-    padding: 0 1rem;
+
+    &__container {
+      flex-direction: row;
+      justify-content: space-between;
+      margin: 0 auto;
+      padding: 0 1rem;
+      max-width: 75rem;
+    }
   }
 }

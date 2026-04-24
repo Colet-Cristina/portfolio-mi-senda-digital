@@ -1,15 +1,24 @@
+/**
+ * Componente Footer
+ * Muestra el cierre de la página, enlaces de contacto y la información de copyright.
+ * Incluye lógica para mantener el año actualizado automáticamente.
+ */
+
 import "../styles/App.scss";
 
 function Footer() {
+  // Lógica para obtener el año actual
   const currentYear = new Date().getFullYear();
 
   return (
     <footer className="footer js_footer">
       <div className="footer__container">
+        {/* Navegación secundaria: Enlaces directos a perfiles profesionales */}
         <div className="footer__social">
           <a href="mailto:coletcristina@gmail.com" className="footer__link">
             Email
           </a>
+
           <a
             href="https://github.com/colet-cristina"
             target="_blank"
@@ -18,6 +27,7 @@ function Footer() {
           >
             GitHub
           </a>
+
           <a
             href="https://linkedin.com/in/cristina-colet-corredera/"
             target="_blank"
@@ -27,8 +37,10 @@ function Footer() {
             LinkedIn
           </a>
         </div>
+
+        {/* Información legal y de autoría: Copyright dinámico */}
         <p className="footer__copy">
-          &copy; {currentYear} - Desarrollado por Cristina Colet
+          &copy; {currentYear} - Desarrollado con dedicación por Cristina Colet
         </p>
       </div>
     </footer>

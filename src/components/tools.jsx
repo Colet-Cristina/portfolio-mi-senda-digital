@@ -1,6 +1,6 @@
 import skillsData from "../services/skillsData.json";
 
-function tools() {
+function Tools() {
   return (
     <section className="tools">
       <h2 className="tools__title">Mi tools</h2>
@@ -20,4 +20,4 @@ function tools() {
   );
 }
 
-export default tools;
+export default Tools;
