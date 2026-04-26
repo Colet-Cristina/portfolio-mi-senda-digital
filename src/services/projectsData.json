@@ -14,5 +14,13 @@
     "tech": ["React", "React Router", "SASS", "API"],
     "link": "https://github.com/Adalab/modulo-3-evaluacion-final-Colet-Cristina",
     "image": "/harry.jpg"
+  },
+  {
+    "id": 3,
+    "title": "Piedra, Papel o Tijera",
+    "description": "Este proyecto es un ejercicio práctico desarrollado como parte de mi formación para aprender la manipulación del DOM, lógica de control y eventos en JavaScript.",
+    "tech": ["HTML5", "CSS3", "JavaScript"],
+    "link": "https://github.com/Colet-Cristina/modulo-2-evaluacion-intermedia-Colet-Cristina",
+    "image": "/juego.png"
   }
 ]

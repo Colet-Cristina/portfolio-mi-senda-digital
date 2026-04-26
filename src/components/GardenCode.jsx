@@ -7,29 +7,37 @@ import "../styles/App.scss";
  * Lista de proyectos dinámicos y un modal con detalles.
  */
 function GardenCode() {
-  // Estado para manejar qué proyecto mostrar en el modal
+  // Estados
   const [selectedProject, setSelectedProject] = useState(null);
+  const [currentIndex, setCurrentIndex] = useState(0);
 
-  // EFECTO PARA EL SCROLL: Se encarga de bloquear/desbloquear el body
+  // Variables
+
+  const maxIndex = projectsData.length - 1;
+
+  // -----  EFECTOS -----
   useEffect(() => {
     if (selectedProject) {
       document.body.style.overflow = "hidden";
     } else {
       document.body.style.overflow = "auto";
     }
-
-    // Limpieza al desmontar el componente
-    return () => {
-      document.body.style.overflow = "auto";
-    };
   }, [selectedProject]);
 
-  const openModal = (project) => {
-    setSelectedProject(project);
+  // Acciones
+  const openModal = (project) => setSelectedProject(project);
+  const closeModal = () => setSelectedProject(null);
+
+  const nextSlide = () => {
+    if (currentIndex < maxIndex) {
+      setCurrentIndex(currentIndex + 1);
+    }
   };
 
-  const closeModal = () => {
-    setSelectedProject(null);
+  const prevSlide = () => {
+    if (currentIndex > 0) {
+      setCurrentIndex(currentIndex - 1);
+    }
   };
 
   return (
@@ -46,24 +54,59 @@ function GardenCode() {
       <h2 className="garden__title">El Jardín</h2>
       <p className="garden__subtitle">Proyectos cultivados con código</p>
 
-      <ul className="garden__list">
-        {projectsData.map((project) => (
-          <li key={project.id} className="garden__item">
-            <article
-              className="project-card"
-              onClick={() => openModal(project)}
-            >
-              <div className="project-card__content">
-                <h3 className="project-card__name">{project.title}</h3>
-                <span className="project-card__plus">+ info</span>
-              </div>
-            </article>
-            <div className="garden__thread"></div>
-          </li>
-        ))}
-      </ul>
+      {/* Contenedor que recorta lo que sobra */}
+      <div className="garden__slider-container">
+        <ul
+          className="garden__list"
+          style={{
+            /* Esta fórmula centra la flor seleccionada */
+            transform: `translateX(-${currentIndex * 11}rem)`,
+            transition: "transform 0.5s cubic-bezier(0.4, 0, 0.2, 1)",
+          }}
+        >
+          {projectsData.map((project, index) => {
+            const isCenter = index === currentIndex;
 
-      {/* RENDERIZADO CONDICIONAL DEL MODAL */}
+            return (
+              <li
+                key={project.id}
+                className={`garden__item ${isCenter ? "is-center" : ""}`}
+              >
+                <article
+                  className="project-card"
+                  onClick={() => openModal(project)}
+                >
+                  <div className="project-card__content">
+                    <h3 className="project-card__name">{project.title}</h3>
+                    <span className="project-card__plus">+ info</span>
+                  </div>
+                </article>
+                <div className="garden__thread"></div>
+              </li>
+            );
+          })}
+        </ul>
+      </div>
+
+      <div className="garden__nav-actions">
+        <button
+          onClick={prevSlide}
+          className="garden__nav-btn"
+          disabled={currentIndex === 0}
+        >
+          Prev
+        </button>
+
+        <button
+          onClick={nextSlide}
+          className="garden__nav-btn"
+          disabled={currentIndex === maxIndex}
+        >
+          Next
+        </button>
+      </div>
+
+      {/* -- MODAL -- */}
       {selectedProject && (
         <div className="modal-overlay" onClick={closeModal}>
           <div className="modal-content" onClick={(e) => e.stopPropagation()}>
