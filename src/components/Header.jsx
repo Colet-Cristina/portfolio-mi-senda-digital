@@ -4,7 +4,6 @@
  * y los accesos directos a redes sociales/contacto.
  */
 
-import "../styles/App.scss";
 import { Link } from "react-router";
 
 function Header() {

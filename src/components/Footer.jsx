@@ -4,8 +4,6 @@
  * Incluye lógica para mantener el año actualizado automáticamente.
  */
 
-import "../styles/App.scss";
-
 function Footer() {
   // Lógica para obtener el año actual
   const currentYear = new Date().getFullYear();

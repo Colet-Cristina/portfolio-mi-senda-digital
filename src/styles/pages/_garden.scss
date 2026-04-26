@@ -2,16 +2,30 @@
 // Contenedor principal con estética Zen y caída de pétalos
 
 .garden {
-  padding: 4rem 1.25rem;
+  padding: 7rem 1.25rem;
   position: relative;
   overflow: hidden;
-  background-color: $color-bg-zen;
+  background: linear-gradient(
+    to bottom,
+    #e0f2f1 0%,
+    // CIELO (donde está la rama de Sakura)
+    #f1f8e9 30%,
+    // TIERRA/CÉSPED (donde nacen tus proyectos)
+    #f1f8e9 70%,
+    // Mantenemos la tierra mientras están las tarjetas
+    #a8d5e2 90%,
+    // AGUA (empieza justo al final de la línea de tierra)
+    #a8d5e2 100% // Conecta perfectamente con el azul del footer
+  );
 
   &__title {
     font-family: $font-japanese;
     color: $color-green;
     text-align: center;
     margin-bottom: 0.5rem;
+
+    position: relative;
+    z-index: 10;
   }
 
   &__subtitle {
@@ -20,16 +34,19 @@
     text-align: center;
     margin-bottom: 2rem;
     font-size: 1.1rem;
+
+    position: relative;
+    z-index: 10;
   }
 
   &__list {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    align-items: flex-end; // CLAVE: Todo nace desde abajo (el suelo)
-    gap: 4rem;
+    align-items: flex-end;
+    gap: 1rem;
     list-style: none;
-    margin: 5rem auto 0;
+    margin: 7rem auto 0;
     max-width: 1000px;
     border-bottom: 2px solid rgba($color-green, 0.3);
   }
@@ -44,107 +61,156 @@
 
     &:nth-child(even) {
       animation-delay: -2s; // Para que no todos se muevan a la vez
-      margin-top: 2rem; // Diferentes alturas
+      margin-top: 2rem;
     }
   }
 
   &__thread {
     width: 2px;
-    height: 3rem;
+    height: 2rem;
     background: linear-gradient(to top, $color-green, transparent);
   }
 }
 
 /* ===================== PROJECT CARD ===================== */
-// Tarjeta con forma de hoja y efecto de revelado
+// Diseño de Pétalo con Interacción
 
 .project-card {
   position: relative;
-  width: 12rem;
-  height: 16rem;
-  background: $header-brown;
-  // Forma de pétalo/hoja
-  border-radius: 50% 50% 50% 50% / 20% 20% 80% 80%;
+  width: 10rem;
+  height: 10rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
   overflow: hidden;
+  cursor: pointer;
+
+  /* Estética de la Flor */
+  background: rgba($color-sakura, 0.9);
+  border-radius: 50% 50% 50% 50% / 20% 20% 80% 80%;
   border: 1px solid $color-green;
+  box-shadow: $shadow-green;
   transition: all 0.5s ease;
 
-  overflow: hidden;
-  box-shadow: $shadow-green;
   transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 
-  &__img-container {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 1;
-  }
-
-  &__img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    opacity: 0; // Oculta hasta el hover
-    transition: opacity 0.5s ease;
-  }
+  /* --- Elementos Internos --- */
 
   &__content {
-    position: relative;
-    z-index: 2;
-    height: 100%;
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
-    padding: 1.5rem;
-    background-color: rgba($header-brown, 0.9);
     transition: opacity 0.4s ease;
   }
 
   &__name {
     font-family: $font-japanese;
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     color: $text-color;
-    margin-bottom: 0.75rem;
+    pointer-events: none;
   }
 
-  &__description {
-    font-size: 0.95rem;
-    line-height: 1.4;
-    color: $color-green;
-    text-align: center;
-    margin-bottom: 1.25rem;
+  &__plus {
+    opacity: 0;
+    transform: translateY(10px);
+    transition: all 0.3s ease;
   }
 
-  &__tech-list {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 0.4rem;
-    margin-bottom: 1.5rem;
-  }
+  /* --- Estados de Interacción --- */
 
-  &__social {
-    width: 2rem;
-    height: 2rem;
-    // Filtro para color estilo sello
-    filter: sepia(1) saturate(5) hue-rotate(-50deg);
-  }
-
-  // Lógica de hover: oculta texto para mostrar imagen
   &:hover {
-    transform: scale(1.1) translateY(-10px);
-    border-color: $color-sakura;
-    box-shadow: 0 0 20px rgba($color-sakura, 0.4);
+    transform: scale(1.08) translateY(-5px) rotate(2deg);
 
-    .project-card__img {
+    background-color: #f5d0ec;
+    border-color: $color-sakura;
+
+    box-shadow: 0 0 25px rgba($color-sakura, 0.5);
+
+    .project-card__plus {
       opacity: 1;
+      transform: translateY(0);
     }
-    .project-card__content {
-      opacity: 0;
-    }
+  }
+
+  &:active {
+    transform: scale(0.95);
+    transition: transform 0.1s ease;
+  }
+}
+/* ===================== MODAL ===================== */
+/* Fondo oscurecido con desenfoque */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba($color-green, 0.4); // Un verde oscuro muy transparente
+  backdrop-filter: blur(8px); // Efecto esmerilado
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  padding: 1.25rem;
+  animation: fadeIn 0.3s ease;
+}
+
+/* Caja del contenido */
+.modal-content {
+  background: white;
+  background: linear-gradient(to bottom, #ffffff, #f1f8e9);
+  width: 100%;
+  max-width: 600px;
+  border-radius: 2rem;
+  position: relative;
+  padding: 2rem;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+  animation: slideUp 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.modal-close {
+  position: absolute;
+  top: 1rem;
+  right: 1.5rem;
+  background: none;
+  border: none;
+  font-size: 2rem;
+  color: $color-green;
+  cursor: pointer;
+}
+
+.modal-img {
+  width: 100%;
+  border-radius: 1rem;
+  margin-bottom: 1.5rem;
+  border: 1px solid rgba($color-green, 0.1);
+}
+
+.modal-title {
+  font-family: $font-japanese;
+  color: $color-green;
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+}
+
+.modal-description {
+  color: $text-color;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+}
+
+.modal-btn {
+  display: inline-block;
+  padding: 0.8rem 1.5rem;
+  background-color: $color-sakura;
+  color: white;
+  text-decoration: none;
+  border-radius: 2rem;
+  transition: transform 0.3s ease;
+
+  &:hover {
+    transform: scale(1.05);
   }
 }
 
@@ -174,6 +240,7 @@
   opacity: 0.6;
   z-index: 1;
   pointer-events: none;
+  transform: rotate(3deg);
 }
 
 /* Pétalos animados */
@@ -209,7 +276,11 @@
 /* =========== MEDIA QUERIES (DESKTOP) =========== */
 
 @media (min-width: 768px) {
-  .garden__list {
-    grid-template-columns: repeat(2, 1fr);
+  .garden {
+    &__list {
+      flex-direction: row;
+      align-items: flex-end;
+      margin-top: 30rem;
+    }
   }
 }
