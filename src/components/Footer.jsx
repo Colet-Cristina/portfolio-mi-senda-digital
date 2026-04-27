@@ -38,7 +38,7 @@ function Footer() {
 
         {/* Información legal y de autoría: Copyright dinámico */}
         <p className="footer__copy">
-          &copy; {currentYear} - Desarrollado con dedicación por Cristina Colet
+          &copy; {currentYear} - Desarrollado por Cristina Colet
         </p>
       </div>
     </footer>

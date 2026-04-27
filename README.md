@@ -38,3 +38,11 @@ Mi objetivo es seguir cultivando mis habilidades y aportar mi capacidad de gesti
 Si quieres saber más o crees que mi forma de cultivar código encaja con tu equipo, ¡hablemos!
 
 [LinkedIn](https://www.linkedin.com/feed/)
+
+## Créditos y Recursos
+
+- Animación de la Flor de Loto: Matt Farmer
+
+  Enlace original: https://codepen.io/mrfarmer777/pen/RaEeBb
+
+- Iconos: FontAwesome.

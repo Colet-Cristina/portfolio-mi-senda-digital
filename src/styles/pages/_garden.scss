@@ -2,20 +2,17 @@
 // Contenedor principal con estética Zen y caída de pétalos
 
 .garden {
-  padding: 7rem 0.5rem;
+  padding: 8rem 0.5rem;
   position: relative;
+
   overflow: hidden;
   background: linear-gradient(
     to bottom,
-    #e0f2f1 0%,
-    // CIELO (donde está la rama de Sakura)
-    #f1f8e9 30%,
-    // TIERRA/CÉSPED (donde nacen tus proyectos)
-    #f1f8e9 70%,
-    // Mantenemos la tierra mientras están las tarjetas
-    #a8d5e2 90%,
-    // AGUA (empieza justo al final de la línea de tierra)
-    #a8d5e2 100% // Conecta perfectamente con el azul del footer
+    #ffb3ba 0%,
+    #ffdfba 30%,
+    #e2f0cb 50%,
+    #8fb9a8 70%,
+    #a8d5e2 100%
   );
 
   &__title {
@@ -32,7 +29,7 @@
     font-family: $font-japanese;
     color: $color-green;
     text-align: center;
-    margin-bottom: 2rem;
+
     font-size: 1.1rem;
 
     position: relative;
@@ -43,10 +40,10 @@
     position: relative;
     width: 100%;
     overflow: hidden;
-    padding: 3rem 0;
+
     display: block;
-    justify-content: center;
     align-items: center;
+    padding-bottom: 5rem;
   }
 
   &__list {
@@ -72,96 +69,176 @@
     transform: scale(0.85);
     filter: blur(1px);
 
-    // Balanceo
-    animation: plantSway 6s ease-in-out infinite;
-    transform-origin: bottom center; // balancea desde arriba
-
     &.is-center {
       opacity: 1;
-      transform: scale(1.1);
+      transform: scale(1);
       filter: blur(0);
       z-index: 10;
-
-      &:nth-child(even) {
-        animation-delay: -2s; // Para que no todos se muevan a la vez
-        margin-top: 2rem;
-      }
     }
-  }
-
-  &__thread {
-    width: 2px;
-    height: 2rem;
-    background: linear-gradient(to top, $color-green, transparent);
   }
 }
 
-/* ===================== PROJECT CARD ===================== */
-// Diseño de Pétalo con Interacción
-
 .project-card {
-  position: relative;
-  width: 10rem;
-  height: 10rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 1rem;
-  overflow: hidden;
-  cursor: pointer;
-
-  /* Estética de la Flor */
-  background: rgba($color-sakura, 0.9);
-  border-radius: 50% 50% 50% 50% / 20% 20% 80% 80%;
-  border: 2px solid #ff9bd4;
-  box-shadow: $shadow-green;
-  transition: all 0.5s ease;
-
-  transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-
-  /* --- Elementos Internos --- */
-
   &__content {
+    /* Dimensiones fijas */
+    width: 10rem;
+    margin-top: -0.5rem;
+    padding: 1.2rem 0.8rem;
+    min-height: 4.5rem;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+
+    /* Alineación del texto */
     display: flex;
     flex-direction: column;
+    justify-content: center;
     align-items: center;
-    transition: opacity 0.4s ease;
+
+    // Fondo imitación madera
+    background: repeating-linear-gradient(
+      to bottom,
+      #c19a6b 0rem,
+      #c19a6b 0.15rem,
+      #8b5a2b 0.2rem,
+      #c19a6b 0.25rem
+    );
+    /* Forma de tablilla */
+    clip-path: polygon(
+      2% 5%,
+      98% 2%,
+      99% 15%,
+      100% 85%,
+      98% 97%,
+      50% 99%,
+      2% 98%,
+      0% 80%,
+      1% 20%
+    );
+
+    border: 0.25rem solid #8b5a2b;
+
+    // Estado ACTIVO
+    .is-center & {
+      background-size: 7rem 7rem;
+      transform: scale(1.1);
+      box-shadow: 0 0.8rem 1.2rem rgba(0, 0, 0, 0.25);
+    }
   }
 
   &__name {
     font-family: $font-japanese;
+    color: #3e2723;
     font-size: 1.1rem;
-    color: $text-color;
-    pointer-events: none;
+    font-weight: 800;
+
+    text-shadow: 0.5px 0.5px 1px rgba(255, 255, 255, 0.2);
   }
 
   &__plus {
-    opacity: 0;
-    transform: translateY(10px);
-    transition: all 0.3s ease;
-  }
-
-  /* --- Estados de Interacción --- */
-
-  &:hover {
-    transform: scale(1.08) translateY(-5px) rotate(2deg);
-
-    background-color: #f5d0ec;
-    border-color: $color-sakura;
-
-    box-shadow: 0 0 25px rgba($color-sakura, 0.5);
-
-    .project-card__plus {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-
-  &:active {
-    transform: scale(0.95);
-    transition: transform 0.1s ease;
+    font-size: 0.7rem;
+    color: #5d4037;
+    font-weight: bold;
+    opacity: 0.8;
   }
 }
+
+/* ===================== BUTTONS ===================== */
+
+.garden__nav-actions {
+  display: flex;
+  justify-content: center;
+  gap: 6rem;
+  padding-top: 2rem;
+  width: 100%;
+  position: relative;
+}
+
+.garden__nav-btn {
+  position: relative;
+  top: auto;
+  transform: none;
+  left: auto;
+  right: auto;
+
+  /* Estética */
+  background: $color-stone;
+  background: radial-gradient(circle at 30% 30%, #a8a8a8, #696969);
+  box-shadow:
+    inset -4px -4px 8px rgba(0, 0, 0, 0.4),
+    4px 8px 15px rgba(0, 0, 0, 0.3);
+  border: 0.1rem solid rgba(0, 0, 0, 0.1);
+  color: $background-color;
+  width: 4rem;
+  height: 3.5rem;
+  border-radius: 63% 37% 54% 46% / 55% 48% 52% 45%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+/* ===================== ELEMENTOS DECORATIVOS ===================== */
+// Elementos ambientales (Sakura y etiquetas)
+
+/* Etiquetas de tecnologías individuales */
+.tech-tag {
+  background: rgba($color-green, 0.08);
+  color: $color-green;
+  padding: 0.2rem 0.6rem;
+  border-radius: 0.8rem;
+  font-size: 0.75rem;
+  border: 0.0625rem solid rgba($color-green, 0.1);
+}
+
+/* Rama decorativa lateral */
+.sakura-branch {
+  position: absolute;
+  top: 1rem;
+  left: -1rem;
+  width: 25rem;
+  height: 15.6rem;
+  background-image: url("/rama.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  opacity: 0.7;
+  z-index: 1;
+  pointer-events: none;
+  transform: rotate(10deg);
+  filter: drop-shadow(2px 4px 6px rgba(0, 0, 0, 0.4));
+}
+
+/* Pétalos animados */
+.petal {
+  position: absolute;
+  background: $color-sakura;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 100% 0% 100% 20%;
+  opacity: 0.7;
+  z-index: 1;
+  pointer-events: none;
+  animation: sakuraFall 12s linear infinite;
+
+  /* Variaciones de posición y tiempo para naturalidad */
+  &:nth-child(1) {
+    left: 15%;
+    animation-delay: 0s;
+    width: 1.4rem;
+  }
+  &:nth-child(2) {
+    left: 65%;
+    animation-delay: 5s;
+    transform: rotate(45deg);
+  }
+  &:nth-child(3) {
+    left: 85%;
+    animation-delay: 2s;
+    width: 1.1rem;
+  }
+}
+
 /* ===================== MODAL ===================== */
 /* Fondo oscurecido con desenfoque */
 .modal-overlay {
@@ -238,98 +315,6 @@
   }
 }
 
-/* ===================== BUTTONS ===================== */
-
-.garden__nav-actions {
-  display: flex;
-  justify-content: center;
-  gap: 2rem;
-  margin-top: 3rem;
-  width: 100%;
-  position: relative;
-  z-index: 40;
-}
-
-.garden__nav-btn {
-  position: relative;
-  top: auto;
-  transform: none;
-  left: auto;
-  right: auto;
-
-  /* Estética */
-  background: $color-stone;
-  border: 0.1rem solid rgba(0, 0, 0, 0.1);
-  color: $background-color;
-  width: 4rem;
-  height: 3.5rem;
-  border-radius: 50% 40% 60% 45%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-weight: bold;
-  cursor: pointer;
-}
-
-/* ===================== ELEMENTOS DECORATIVOS ===================== */
-// Elementos ambientales (Sakura y etiquetas)
-
-/* Etiquetas de tecnologías individuales */
-.tech-tag {
-  background: rgba($color-green, 0.08);
-  color: $color-green;
-  padding: 0.2rem 0.6rem;
-  border-radius: 0.8rem;
-  font-size: 0.75rem;
-  border: 0.0625rem solid rgba($color-green, 0.1);
-}
-
-/* Rama decorativa lateral */
-.sakura-branch {
-  position: absolute;
-  top: 1rem;
-  left: -1rem;
-  width: 25rem;
-  height: 15.6rem;
-  background-image: url("/rama.png");
-  background-size: contain;
-  background-repeat: no-repeat;
-  opacity: 0.7;
-  z-index: 1;
-  pointer-events: none;
-  transform: rotate(10deg);
-}
-
-/* Pétalos animados */
-.petal {
-  position: absolute;
-  background: $color-sakura;
-  width: 2rem;
-  height: 2rem;
-  border-radius: 100% 0% 100% 20%;
-  opacity: 0.7;
-  z-index: 1;
-  pointer-events: none;
-  animation: sakuraFall 12s linear infinite;
-
-  /* Variaciones de posición y tiempo para naturalidad */
-  &:nth-child(1) {
-    left: 15%;
-    animation-delay: 0s;
-    width: 1.4rem;
-  }
-  &:nth-child(2) {
-    left: 65%;
-    animation-delay: 5s;
-    transform: rotate(45deg);
-  }
-  &:nth-child(3) {
-    left: 85%;
-    animation-delay: 2s;
-    width: 1.1rem;
-  }
-}
-
 /* =========== MEDIA QUERIES (DESKTOP) =========== */
 
 @media (min-width: 768px) {
@@ -337,13 +322,18 @@
     &__list {
       flex-direction: row;
       align-items: flex-end;
-      margin-top: 30rem;
+      gap: 5rem;
     }
 
     &:hover:not(:disabled) {
       color: $color-red;
       background-color: $text-color;
       transform: scale(1.1);
+    }
+    .garden__slider-container {
+      display: flex;
+      flex-grow: 1;
+      align-items: center;
     }
   }
 }

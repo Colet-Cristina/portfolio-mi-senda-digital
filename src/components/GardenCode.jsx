@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import GardenFlower from "./GardenFlower";
 import projectsData from "../services/projectsData.json";
 import "../styles/App.scss";
 
@@ -76,9 +77,11 @@ function GardenCode() {
                   className="project-card"
                   onClick={() => openModal(project)}
                 >
+                  <GardenFlower isCenter={isCenter} />
+
                   <div className="project-card__content">
                     <h3 className="project-card__name">{project.title}</h3>
-                    <span className="project-card__plus">+ info</span>
+                    <span className="project-card__plus">info</span>
                   </div>
                 </article>
                 <div className="garden__thread"></div>

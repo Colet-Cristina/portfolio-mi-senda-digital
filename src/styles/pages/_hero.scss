@@ -145,34 +145,26 @@
     align-items: center;
     justify-content: center;
     text-decoration: none;
-    color: $background-color;
-    font-family: $font-body;
     font-weight: bold;
     font-style: italic;
     padding: 1rem;
     width: 9rem;
     height: 9rem;
-    background-color: $color-stone;
-    background-image:
-      radial-gradient(
-        circle at -20% -10%,
-        transparent 75%,
-        rgba(0, 0, 0, 0.12) 80%,
-        transparent 95%
-      ),
-      radial-gradient(
-        circle at -20% -10%,
-        transparent 40%,
-        rgba(255, 255, 255, 0.07) 53%,
-        transparent 58%
-      );
+    font-family: $font-body;
 
+    /* Estética */
+    color: $background-color;
+    background-color: $color-stone;
+    box-shadow:
+      inset -4px -4px 8px rgba(0, 0, 0, 0.4),
+      4px 8px 15px rgba(0, 0, 0, 0.3);
     border: 0.1rem solid rgba(0, 0, 0, 0.1);
+    background: radial-gradient(circle at 30% 30%, #a8a8a8, #696969);
     border-bottom: 0.3rem solid rgba(0, 0, 0, 0.2);
     border-radius: 60% 40% 70% 30% / 40% 50% 60% 70%;
     transition: all 0.4s ease;
-    box-shadow: $shadow-strong;
-    animation: fadeInStone 1.5s ease-in-out both;
+
+    animation: fadeInStone 1s ease-in-out both;
 
     &--roots {
       animation-delay: 1.8s;
@@ -193,6 +185,11 @@
     &:hover {
       color: $color-red;
       background-color: $text-color;
+      background: radial-gradient(
+        circle at 30% 30%,
+        $text-color,
+        darken($text-color, 10%)
+      );
       transform: scale(1.05);
       background-blend-mode: normal;
       filter: contrast(1.1) brightness(1.1);
