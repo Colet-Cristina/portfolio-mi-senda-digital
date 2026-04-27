@@ -12,6 +12,9 @@ function GardenCode() {
   const [selectedProject, setSelectedProject] = useState(null);
   const [currentIndex, setCurrentIndex] = useState(0);
 
+  const isDesktop = window.innerWidth >= 768;
+  const movementUnit = isDesktop ? 16 : 11;
+
   // Variables
 
   const maxIndex = projectsData.length - 1;
@@ -61,7 +64,7 @@ function GardenCode() {
           className="garden__list"
           style={{
             /* Esta fórmula centra la flor seleccionada */
-            transform: `translateX(-${currentIndex * 11}rem)`,
+            transform: `translateX(-${currentIndex * movementUnit}rem)`,
             transition: "transform 0.5s cubic-bezier(0.4, 0, 0.2, 1)",
           }}
         >
