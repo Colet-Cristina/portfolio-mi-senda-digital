@@ -77,14 +77,11 @@
     justify-content: left;
     align-items: center;
 
-    &-icon {
-      height: 1.5rem;
-      width: auto;
+    &-link {
       opacity: 0;
       animation: hankoStamp 0.8s ease-out forwards;
       transition: transform 0.3s ease;
 
-      // Delays para entrada en cascada
       &:nth-child(1) {
         animation-delay: 1.8s;
       } // Email
@@ -99,10 +96,16 @@
         transform: scale(1.2) rotate(5deg);
       }
     }
+
+    &-icon {
+      height: 1.5rem;
+      width: auto;
+      display: block;
+    }
   }
 }
 
-/* --- RESPONSIVE: Desktop --- */
+/* --- MEDIA QUERIES (DESKTOP) --- */
 @media (min-width: 768px) {
   .header {
     &__container {
@@ -118,7 +121,10 @@
     }
     &__title-link {
       margin-left: 5rem;
-      font-size: 1.8rem;
+
+      .scroll__text {
+        font-size: 1.8rem;
+      }
     }
   }
 }

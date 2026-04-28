@@ -10,6 +10,8 @@ function GardenFlower({ isCenter }) {
       <span className="flower-stem"></span>
       <span className="flower-leaf leaf-left"></span>
       <span className="flower-leaf leaf-right"></span>
+
+      {/* Anatomía del Loto (SVG para precisión geométrica) */}
       <svg className="lotus-flower" viewBox="0 0 400 230">
         <defs>
           <radialGradient
@@ -21,29 +23,20 @@ function GardenFlower({ isCenter }) {
           ></radialGradient>
         </defs>
         <g>
-          {/* Sombra */}
-          <ellipse
-            className="lotus-shadow"
-            ry="6"
-            rx="123.5"
-            cy="195"
-            cx="198.5"
-            fill="url(#svg_9)"
-          />
-
-          {/* Pétalo central */}
+          {/* Pétalos: Organizados por capas para permitir animaciones escalonadas
+           * Pétalo central */}
           <path
             id="center"
             className="petal-center"
             d="m200.2,20.5c-6.6,-0.7-36.3,39.5-36,78.2c0.3,38.7 26.3,76.7 38,76.7c11.6,0 30.3,-31.6 31,-74.3c0.6,-42.7-26.3,-79.8-33,-80.6z"
           />
-          {/* Pétalo izquierda "l" */}
+          {/* Capas laterales (Izquierda/Derecha) */}
           <path
             id="l1"
             className="petal-l"
             d="m143.5,26c-6.5,1.6-17.4,51.6-1.3,89.3c16.1,37.6 55.8,65.3 66.6,61.1c10.8,-4.2 15.1,-41.7-1.7,-83.6c-16.8,-41.8-57.1,-68.4-63.6,-66.7z"
           />
-          {/* Pétalo derecha "r" */}
+
           <path
             id="r1"
             className="petal-r"

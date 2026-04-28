@@ -1,3 +1,4 @@
+/* Componente Tools */
 import skillsData from "../services/skillsData.json";
 
 function Tools() {

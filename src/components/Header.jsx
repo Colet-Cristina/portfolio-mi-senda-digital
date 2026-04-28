@@ -45,7 +45,7 @@ function Header() {
           <a
             href="https://github.com/colet-cristina"
             target="_blank"
-            rel="noreferrer"
+            rel="noopener noreferrer"
             className="header__social-link"
           >
             <img src="/git.png" alt="GitHub" className="header__social-icon" />
@@ -55,7 +55,7 @@ function Header() {
           <a
             href="https://linkedin.com/in/cristina-colet-corredera/"
             target="_blank"
-            rel="noreferrer"
+            rel="noopener noreferrer"
             className="header__social-link"
           >
             <img src="/in.png" alt="LinkedIn" className="header__social-icon" />

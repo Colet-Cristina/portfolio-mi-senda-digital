@@ -11,15 +11,14 @@ function GardenCode() {
   // Estados
   const [selectedProject, setSelectedProject] = useState(null);
   const [currentIndex, setCurrentIndex] = useState(0);
-
+  // Configuracón dinámica
   const isDesktop = window.innerWidth >= 768;
   const movementUnit = isDesktop ? 16 : 11;
-
-  // Variables
-
   const maxIndex = projectsData.length - 1;
 
   // -----  EFECTOS -----
+
+  // Bloquea el scroll de la página principal cuando hay un modal activo
   useEffect(() => {
     if (selectedProject) {
       document.body.style.overflow = "hidden";
@@ -28,10 +27,11 @@ function GardenCode() {
     }
   }, [selectedProject]);
 
-  // Acciones
+  // Manejador de eventos
   const openModal = (project) => setSelectedProject(project);
   const closeModal = () => setSelectedProject(null);
 
+  // Navegación del Slider
   const nextSlide = () => {
     if (currentIndex < maxIndex) {
       setCurrentIndex(currentIndex + 1);
@@ -46,7 +46,7 @@ function GardenCode() {
 
   return (
     <section id="projects" className="garden js_garden">
-      {/* Elementos decorativos */}
+      {/* Elementos decorativos petálos sakura */}
       <div className="sakura-branch"></div>
       <div className="falling-petals">
         <span className="petal"></span>
@@ -87,13 +87,14 @@ function GardenCode() {
                     <span className="project-card__plus">info</span>
                   </div>
                 </article>
+                {/* Tallo que conecta las flores */}
                 <div className="garden__thread"></div>
               </li>
             );
           })}
         </ul>
       </div>
-
+      {/* Controles de navegación */}
       <div className="garden__nav-actions">
         <button
           onClick={prevSlide}
@@ -148,10 +149,10 @@ function GardenCode() {
                   <a
                     href={selectedProject.link}
                     target="_blank"
-                    rel="noreferrer"
+                    rel="noopener noreferrer"
                     className="modal-btn"
                   >
-                    Ver en GitHub
+                    Explorar en GitHub
                   </a>
                 </div>
               </div>

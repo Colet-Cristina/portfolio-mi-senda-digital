@@ -1,3 +1,5 @@
+/* --- GARDEN FLOWER: Animación y Estados --- */
+
 .flower-container {
   width: 12rem;
   height: 12rem;
@@ -6,7 +8,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-
+  // Animación ambiental: Simula el balanceo por el viento
   animation: plantSway 6s ease-in-out infinite;
 
   .is-center & {
@@ -14,7 +16,7 @@
     transform-origin: bottom center;
     transform: scale(1.1);
   }
-
+  /* --- ESTRUCTURA BOTÁNICA --- */
   // Tallo
   .flower-stem {
     position: absolute;
@@ -49,6 +51,7 @@
     }
   }
 
+  /* --- ANATOMÍA DEL SVG --- */
   .lotus-flower {
     position: relative;
     z-index: 2;
@@ -56,7 +59,7 @@
     width: 100%;
     filter: drop-shadow(0 0.625rem 0.9375rem rgba(0, 0, 0, 0.15));
 
-    // Colores por defecto (Flor cerrada)
+    // Colores flor cerrada
     .petal-l,
     .petal-r,
     .petal-center {
@@ -64,10 +67,9 @@
         fill 1.2s ease,
         transform 1.5s ease,
         stroke 1s ease;
-      stroke-width: 0.5px;
-      stroke: rgba(255, 255, 255, 0.2);
     }
 
+    // Los pétalos vuelven a su posición 0 (posición de apertura del SVG)
     .petal-l,
     .petal-r {
       fill: #f0879f;
@@ -79,7 +81,7 @@
     }
   }
 
-  // --- ESTADO ACTIVO (Flor en el centro) ---
+  /* --- ESTADO: FLOR ABIERTA (ACTIVA) --- */
   &.is-active {
     #l1,
     #r1 {

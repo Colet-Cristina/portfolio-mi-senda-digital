@@ -1,13 +1,14 @@
-/* ===================== GARDEN SECTION ===================== */
-// Contenedor principal con estética Zen y caída de pétalos
+/* --- GARDEN: Contenedor principal con estética Zen y caída de pétalos --- */
 
 .garden {
-  padding: 8rem 0.5rem;
+  padding: 8rem 0rem;
   position: relative;
+  overflow: hidden;
 
+  // Entrada suave de la sección
   animation: fadeInStone 2s ease-in-out both;
 
-  overflow: hidden;
+  // Background: Representación visual del ciclo natural
   background: linear-gradient(
     to bottom,
     #ffb3ba 0%,
@@ -22,7 +23,6 @@
     color: $color-green;
     text-align: center;
     margin-bottom: 0.5rem;
-
     position: relative;
     z-index: 10;
   }
@@ -31,20 +31,20 @@
     font-family: $font-japanese;
     color: $color-green;
     text-align: center;
-
     font-size: 1.1rem;
-
     position: relative;
     z-index: 10;
   }
 
+  /* --- SLIDER  --- */
   .garden__slider-container {
     position: relative;
     width: 100%;
     overflow: hidden;
     padding-bottom: 5rem;
+    padding: 0 2rem;
   }
-
+  // Lista dinámica: Gestiona el centrado mediante cálculos de padding
   &__list {
     display: flex;
     flex-wrap: nowrap;
@@ -65,8 +65,9 @@
     align-items: center;
 
     transform: scale(0.85);
-    filter: blur(1px);
+    filter: blur(1px); // Efecto de profundidad de campo
 
+    // Estado ACTIVO: Resalta el proyecto central
     &.is-center {
       opacity: 1;
       transform: scale(1);
@@ -76,9 +77,10 @@
   }
 }
 
+/* --- TARJETAS DEL PROYECTO --- */
 .project-card {
   &__content {
-    /* Dimensiones fijas */
+    //  Dimensiones fijas
     width: 10rem;
     margin-top: -0.5rem;
     padding: 1.2rem 0.8rem;
@@ -87,15 +89,18 @@
     margin-right: auto;
     position: relative;
 
-    /* Alineación del texto */
+    //  Alineación del texto
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background: transparent;
 
-    // /* Sombra interna para dar volumen */
-    box-shadow: inset 0 -20px 20px rgba(0, 0, 0, 0.1);
+    // Sombra y gradiente radial para efecto de relieve
+    box-shadow:
+    // Interna
+      inset 0 -10px 20px rgba(0, 0, 0, 0.1),
+      // Exterior
+      0 12px 20px -6px rgba(62, 83, 62, 0.2);
     background: radial-gradient(
       circle at center,
       #c8f3ce 20%,
@@ -115,8 +120,11 @@
   &__name {
     font-family: $font-japanese;
     color: #3e2723;
-    font-size: 1.1rem;
+    font-size: 1rem;
     font-weight: 800;
+    line-height: 1.2;
+    text-align: center;
+    word-wrap: break-word;
 
     text-shadow: 0.5px 0.5px 1px rgba(255, 255, 255, 0.2);
   }
@@ -129,7 +137,7 @@
   }
 }
 
-/* ===================== BUTTONS ===================== */
+/* --- PIEDRAS NAVEGACIÓN MODAL --- */
 
 .garden__nav-actions {
   display: flex;
@@ -147,7 +155,7 @@
   left: auto;
   right: auto;
 
-  /* Estética */
+  // Estética
   background: $color-stone;
   background: radial-gradient(circle at 30% 30%, #a8a8a8, #696969);
   box-shadow:
@@ -157,27 +165,16 @@
   color: $background-color;
   width: 4rem;
   height: 3.5rem;
-  border-radius: 63% 37% 54% 46% / 55% 48% 52% 45%;
+  border-radius: 63% 37% 54% 46% / 70% 70% 30% 30%;
   display: flex;
   justify-content: center;
   align-items: center;
   font-weight: bold;
 }
 
-/* ===================== ELEMENTOS DECORATIVOS ===================== */
-// Elementos ambientales (Sakura y etiquetas)
+/* --- ELEMENTOS DECORATIVOS --- */
 
-/* Etiquetas de tecnologías individuales */
-.tech-tag {
-  background: rgba($color-green, 0.08);
-  color: $color-green;
-  padding: 0.2rem 0.6rem;
-  border-radius: 0.8rem;
-  font-size: 0.75rem;
-  border: 0.0625rem solid rgba($color-green, 0.1);
-}
-
-/* Rama decorativa lateral */
+// Rama decorativa lateral
 .sakura-branch {
   position: absolute;
   top: 1rem;
@@ -194,7 +191,7 @@
   filter: drop-shadow(2px 4px 6px rgba(0, 0, 0, 0.4));
 }
 
-/* Pétalos animados */
+// Pétalos animados
 .petal {
   position: absolute;
   background: $color-sakura;
@@ -206,7 +203,7 @@
   pointer-events: none;
   animation: sakuraFall 12s linear infinite;
 
-  /* Variaciones de posición y tiempo para naturalidad */
+  // Variaciones de posición y tiempo para naturalidad
   &:nth-child(1) {
     left: 15%;
     animation-delay: 0s;
@@ -223,16 +220,24 @@
     width: 1.1rem;
   }
 }
+.tech-tag {
+  background: rgba($color-green, 0.08);
+  color: $color-green;
+  padding: 0.2rem 0.6rem;
+  border-radius: 0.8rem;
+  font-size: 0.75rem;
+  border: 0.0625rem solid rgba($color-green, 0.1);
+}
 
-/* ===================== MODAL ===================== */
-/* Fondo oscurecido con desenfoque */
+/* --- MODAL --- */
+// Fondo oscurecido con desenfoque
 .modal-overlay {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba($color-green, 0.4); // Un verde oscuro muy transparente
+  background: rgba($color-sakura, 0.1);
   backdrop-filter: blur(8px); // Efecto esmerilado
   display: flex;
   justify-content: center;
@@ -242,19 +247,25 @@
   animation: fadeIn 0.3s ease;
 }
 
-/* Caja del contenido */
+// Caja del contenido
 .modal-content {
-  background: white;
-  background: linear-gradient(to bottom, #ffffff, #f1f8e9);
-  width: 100%;
+  background: linear-gradient(
+    180deg,
+    #fae3e9 0%,
+    #f2a2b1 35%,
+    #eb6383 70%,
+    #c84b6b 100%
+  );
+  width: 90%;
   max-width: 600px;
   border-radius: 2rem;
   position: relative;
   padding: 2rem;
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
-  animation: slideUp 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-}
 
+  &.is-active {
+    animation: flowerPop 20s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+  }
+}
 .modal-close {
   position: absolute;
   top: 1rem;
@@ -267,19 +278,21 @@
 }
 
 .modal-img {
-  width: 100%;
-  border-radius: 1rem;
+  width: 90%;
+  border-radius: 0.5rem;
   margin-bottom: 1.5rem;
-  border: 1px solid rgba($color-green, 0.1);
+  border: 1px solid rgba($color-stone, 1);
 }
 
 .modal-title {
   font-family: $font-japanese;
-  color: $color-green;
+  color: $text-color;
   font-size: 1.8rem;
-  margin-bottom: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
-
 .modal-description {
   color: $text-color;
   line-height: 1.6;
@@ -290,7 +303,7 @@
   display: inline-block;
   padding: 0.8rem 1.5rem;
   background-color: $color-sakura;
-  color: white;
+  color: $text-color;
   text-decoration: none;
   border-radius: 2rem;
   transition: transform 0.3s ease;
@@ -300,7 +313,7 @@
   }
 }
 
-/* =========== MEDIA QUERIES (DESKTOP) =========== */
+/* --- MEDIA QUERIES (DESKTOP) --- */
 
 @media (min-width: 768px) {
   .garden {
@@ -338,5 +351,8 @@
     transform: scale(1.3);
     transition: transform 0.2s ease;
     cursor: pointer;
+  }
+  .modal-content {
+    width: 30%;
   }
 }

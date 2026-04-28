@@ -32,13 +32,13 @@ function App() {
           <Route path="/" element={<Hero />} />
 
           {/* Sección Raíces: Información biográfica */}
-          <Route path="/Roots" element={<Roots />} />
+          <Route path="/raices" element={<Roots />} />
 
           {/* Sección de portfolio: Listado de proyectos dinámicos */}
           <Route path="/jardin-de-codigo" element={<GardenCode />} />
 
           {/* Sección de herramientas: Stack tecnológico y skills */}
-          <Route path="/tools" element={<Tools />} />
+          <Route path="/herramientas" element={<Tools />} />
         </Routes>
       </main>
 

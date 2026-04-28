@@ -1,0 +1,34 @@
+/* --- ROOTS: --- */
+/* ===================== JAPANESE SUNSET ===================== */
+//   .japanese-sunset {
+//     position: absolute;
+
+//     // Posición: Lo ideal es que esté centrado horizontalmente
+//     // y a media altura para que las flores pasen por delante.
+//     top: 15rem; // Ajusta esto según dónde acabe tu Hero
+//     left: 70%;
+//     transform: translateX(-50%);
+
+//     // Tamaño: Debe ser grande y potente
+//     width: 15rem;
+//     height: 10rem;
+//     border-radius: 10rem 10rem 0 0;
+
+//     // Color: Usaremos el rojo de tu sello ($color-red o #c0392b)
+//     background-color: rgba(#c0732b, 0.7);
+
+//     // El brillo (La clave del atardecer):
+//     // Usamos el color de sakura para el brillo externo para que se integre bien.
+//     box-shadow:
+//       0 0 4rem rgba(#c0392b, 0.4),
+//       // Brillo interno suave
+//       0 0 10rem rgba(#fec5e5, 0.6); // Brillo externo rosa cálido
+
+//     // Z-index: Debe estar detrás de las flores, el texto y la rama.
+//     z-index: -1;
+
+//     // Un toque de difuminado para que no parezca cortado con tijeras (opcional)
+//     filter: blur(0.7rem);
+//     opacity: 0.9;
+//   }
+// /* --- MEDIA QUERIES (DESKTOP) --- */

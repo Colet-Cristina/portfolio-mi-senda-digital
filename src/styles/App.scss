@@ -8,11 +8,11 @@
 
 // Pages
 @import "./pages/hero";
-@import "./pages/garden";
+@import "./pages/gardenCode";
 @import "./pages/gardenFlower";
 @import "./pages/tools";
 
-// --- RESET ---
+// --- ESTRUCTURA GLOBAL ---
 * {
   margin: 0;
   padding: 0;
@@ -25,6 +25,7 @@ body {
   color: $text-color;
   font-family: $font-body;
   line-height: 1.6;
+  font-size: 1rem;
   min-height: 100vh;
 }
 .layout {

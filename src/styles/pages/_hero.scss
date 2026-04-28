@@ -1,5 +1,4 @@
-/* ===================== HERO SECTION ===================== */
-// Sección principal con efectos de jardín zen (arena y agua)
+/* --- HERO: Sección principal con efectos de jardín zen (arena y agua) --- */
 
 .hero {
   // Layout: Centrado de contenido con Flexbox
@@ -23,7 +22,7 @@
     #a8d5e2 85%
   );
 
-  /* =========== CAPA DE TEXTURA (GRANO) =========== */
+  /* --- CAPA DE TEXTURA (GRANO) --- */
   // Simula la arena
   &::before {
     content: "";
@@ -50,7 +49,7 @@
     z-index: 1;
     pointer-events: none;
   }
-  /* =========== CAPA DE ONDAS =========== */
+  /* --- CAPA DE ONDAS --- */
   // Efecto de dunas arena y corrientes de agua
   &::after {
     content: "";
@@ -98,7 +97,7 @@
     animation: waveFlow 5s linear infinite;
   }
 
-  /* =========== CONTENIDO =========== */
+  /* --- CONTENIDO --- */
   &__greeting,
   &__name,
   &__description,
@@ -139,7 +138,7 @@
     flex-wrap: wrap;
   }
 
-  /* =========== PIEDRAS =========== */
+  /* --- NAVEGACIÓN ESTILO PIEDRA --- */
   &__link {
     display: flex;
     align-items: center;
@@ -152,7 +151,7 @@
     height: 9rem;
     font-family: $font-body;
 
-    /* Estética */
+    // Estética
     color: $background-color;
     background-color: $color-stone;
     box-shadow:
@@ -197,7 +196,7 @@
   }
 }
 
-/* =========== MEDIA QUERIES (DESKTOP) =========== */
+/* --- MEDIA QUERIES (DESKTOP) --- */
 @media (min-width: 768px) {
   .hero {
     background: linear-gradient(

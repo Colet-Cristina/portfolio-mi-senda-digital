@@ -1,8 +1,4 @@
-/**
- * Componente Hero
- * Sección de bienvenida que establece la identidad visual del portfolio.
- * Incluye el menú de navegación principal hacia las diferentes secciones del "jardín".
- */
+/* --- HERO: Incluye el menú de navegación principal hacia las diferentes secciones del "jardín" --- */
 
 import { Link } from "react-router";
 
@@ -47,7 +43,7 @@ function Hero() {
 
             <li className="hero__item">
               <Link
-                to="/tools"
+                to="/herramientas"
                 className="hero__link hero__link--tools"
                 aria-label="Mis tecnologías y herramientas de desarrollo"
               >
