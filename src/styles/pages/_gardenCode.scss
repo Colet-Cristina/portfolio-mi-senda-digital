@@ -157,11 +157,9 @@
 
   // Estética
   background: $color-stone;
-  background: radial-gradient(circle at 30% 30%, #a8a8a8, #696969);
-  box-shadow:
-    inset -4px -4px 8px rgba(0, 0, 0, 0.4),
-    4px 8px 15px rgba(0, 0, 0, 0.3);
-  border: 0.1rem solid rgba(0, 0, 0, 0.1);
+  background: $stone-gradient;
+  box-shadow: $shadow-stone;
+  border: $stone-border;
   color: $background-color;
   width: 4rem;
   height: 3.5rem;

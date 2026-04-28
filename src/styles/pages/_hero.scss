@@ -2,7 +2,7 @@
 
 .hero {
   // Layout: Centrado de contenido con Flexbox
-  flex-grow: 1;
+  min-height: 85vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -11,8 +11,9 @@
   // Apilamiento para capas decorativas
   position: relative;
   overflow: hidden;
-  padding: 2rem 1.25rem;
+  padding: 4rem 1.5rem;
   text-align: center;
+
   // Fondo base: Transición cromática de arena a agua
   background: linear-gradient(
     to bottom,
@@ -22,8 +23,8 @@
     #a8d5e2 85%
   );
 
-  /* --- CAPA DE TEXTURA (GRANO) --- */
-  // Simula la arena
+  /* --- CAPA DE TEXTURA  (arena y ondas)--- */
+
   &::before {
     content: "";
     position: absolute;
@@ -49,8 +50,7 @@
     z-index: 1;
     pointer-events: none;
   }
-  /* --- CAPA DE ONDAS --- */
-  // Efecto de dunas arena y corrientes de agua
+
   &::after {
     content: "";
     position: absolute;
@@ -98,6 +98,17 @@
   }
 
   /* --- CONTENIDO --- */
+  &__wrapper {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    max-width: 75rem;
+  }
+
+  &__content {
+    margin-bottom: 5rem;
+  }
+
   &__greeting,
   &__name,
   &__description,
@@ -110,42 +121,42 @@
     font-family: $font-japanese;
     font-size: 2.5rem;
     color: $color-red;
-    margin-bottom: 1.5rem;
+    margin-bottom: 5rem;
   }
 
   &__greeting {
     font-family: $font-japanese;
     font-size: 1.5rem;
     color: $color-darkGreen;
-    margin-bottom: 0.5rem;
+    margin-bottom: 1.5rem;
   }
 
   &__description {
     font-family: $font-body;
-    margin: 0 auto 2.5rem;
+
     font-size: 1rem;
     line-height: 1.6;
     color: $color-green;
+    max-width: 45rem;
+    margin: 0 auto;
   }
 
+  /* --- NAVEGACIÓN ESTILO PIEDRA --- */
   &__list {
     display: flex;
     list-style: none;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start;
     gap: 3rem;
-    margin-top: 2rem;
     flex-wrap: wrap;
   }
 
-  /* --- NAVEGACIÓN ESTILO PIEDRA --- */
   &__link {
     display: flex;
     align-items: center;
     justify-content: center;
     text-decoration: none;
     font-weight: bold;
-    font-style: italic;
     padding: 1rem;
     width: 9rem;
     height: 9rem;
@@ -154,12 +165,9 @@
     // Estética
     color: $background-color;
     background-color: $color-stone;
-    box-shadow:
-      inset -4px -4px 8px rgba(0, 0, 0, 0.4),
-      4px 8px 15px rgba(0, 0, 0, 0.3);
-    border: 0.1rem solid rgba(0, 0, 0, 0.1);
-    background: radial-gradient(circle at 30% 30%, #a8a8a8, #696969);
-    border-bottom: 0.3rem solid rgba(0, 0, 0, 0.2);
+    box-shadow: $shadow-stone;
+    border: $stone-border;
+    background: $stone-gradient;
     border-radius: 60% 40% 70% 30% / 40% 50% 60% 70%;
     transition: all 0.4s ease;
 
@@ -167,14 +175,15 @@
 
     &--roots {
       animation-delay: 1.8s;
-      margin-top: 0;
       rotate: -3deg;
     }
+
     &--garden {
       animation-delay: 2.4s;
       margin-top: 5rem;
       rotate: 2deg;
     }
+
     &--tools {
       animation-delay: 3s;
       margin-top: -2rem;
@@ -190,7 +199,7 @@
         darken($text-color, 10%)
       );
       transform: scale(1.05);
-      background-blend-mode: normal;
+
       filter: contrast(1.1) brightness(1.1);
     }
   }
@@ -199,6 +208,7 @@
 /* --- MEDIA QUERIES (DESKTOP) --- */
 @media (min-width: 768px) {
   .hero {
+    min-height: 70vh;
     background: linear-gradient(
       to bottom,
       $background-color 0%,
@@ -207,10 +217,11 @@
       #a8d5e2 85%
     );
 
-    min-height: 60vh;
-
+    &__content {
+      margin-bottom: 7rem;
+    }
     &__name {
-      font-size: 3.5rem;
+      font-size: 4.5rem;
     }
 
     &__description {
@@ -218,6 +229,9 @@
       max-width: 40rem;
       margin-left: auto;
       margin-right: auto;
+    }
+    &__list {
+      gap: 6rem;
     }
   }
 }

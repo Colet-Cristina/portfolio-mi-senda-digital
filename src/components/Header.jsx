@@ -13,12 +13,12 @@ function Header() {
         {/* Identidad visual: Sello personal estilo hanko japonés */}
         <img
           src="/sello.png"
-          alt="Sello tradicional japonés con el nombre de Cristina"
+          alt="Sello personal estilo Hanko japonés en color rojo con el nombre de Cristina en caracteres Katakana"
           className="header__seal"
         />
 
         {/* Título dinámico: Implementa el efecto visual de un pergamino (scroll) */}
-        <h1 className="header__title">
+        <h2 className="header__title">
           <Link to="/" className="header__title-link scroll">
             {/* Elementos decorativos del pergamino */}
             <span className="scroll__roller scroll__roller--left"></span>
@@ -29,7 +29,7 @@ function Header() {
 
             <span className="scroll__roller scroll__roller--right"></span>
           </Link>
-        </h1>
+        </h2>
 
         {/* Navegación social: Enlaces externos y contacto directo */}
         <nav className="header__social">

@@ -22,13 +22,23 @@ $color-git: #f1edec;
 
 /* --- TIPOGRAFÍA --- */
 $text-color: #333333;
-$font-japanese: "Shippori Mincho", serif;
+$font-japanese: "Yuji Syuku", serif;
 $font-body: "Lora", serif;
 
+/* --- ESTÉTICA DE PIEDRA --- */
+$stone-gradient: radial-gradient(circle at 30% 30%, #a8a8a8, #696969);
+$stone-border: 0.1rem solid rgba(0, 0, 0, 0.1);
+
 /* --- SOMBRAS --- */
+
 // Neutras
 $shadow-soft: 0 0.25rem 0.375rem rgba(0, 0, 0, 0.1);
 $shadow-strong: 0 0.625rem 0.9375rem rgba(0, 0, 0, 0.4);
+
+// piedras
+$shadow-stone:
+  inset -0.25rem -0.25rem 0.5rem rgba(0, 0, 0, 0.4),
+  0.25rem 0.5rem 0.9375rem rgba(0, 0, 0, 0.3);
 
 // Temáticas
 $shadow-green: 0.625rem 0.625rem 1.25rem rgba(45, 90, 39, 0.5);
@@ -42,5 +52,3 @@ $shadow-js: 0 0.5rem 1.5rem rgba($color-js, 0.3);
 $shadow-react: 0 0.5rem 1.5rem rgba($color-react, 0.3);
 $shadow-sass: 0 0.5rem 1.5rem rgba($color-sass, 0.3);
 $shadow-node: 0 0.5rem 1.5rem rgba($color-node, 0.3);
-
-// ------------------------------------
