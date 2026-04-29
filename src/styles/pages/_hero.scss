@@ -107,6 +107,9 @@
 
   &__content {
     margin-bottom: 5rem;
+    opacity: 0;
+    animation: fadeIn 0.8s ease-out forwards;
+    animation-delay: 0.2s;
   }
 
   &__greeting,
@@ -121,7 +124,39 @@
     font-family: $font-japanese;
     font-size: 2.5rem;
     color: $color-red;
+    margin-bottom: 2rem;
+  }
+
+  // Redes sociales con entrada escalonada
+  &__social {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
     margin-bottom: 5rem;
+
+    &-item {
+      width: 2.5rem;
+      height: 2.5rem;
+      transition:
+        transform 0.3s ease,
+        filter 0.3s ease;
+
+      &:hover {
+        transform: scale(1.15);
+        filter: brightness(1.2) drop-shadow(0 0 5px rgba($color-red, 0.5));
+      }
+
+      img {
+        width: 80%;
+        height: auto;
+      }
+    }
+
+    &-icon {
+      height: 1.5rem;
+      width: auto;
+      display: block;
+    }
   }
 
   &__greeting {
@@ -220,6 +255,7 @@
     &__content {
       margin-bottom: 7rem;
     }
+
     &__name {
       font-size: 4.5rem;
     }

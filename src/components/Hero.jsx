@@ -4,11 +4,43 @@ import { Link } from "react-router";
 
 function Hero() {
   return (
-    <section id="about" className="hero js_hero">
+    <section id="about" className="hero">
       <div className="hero__wrapper">
         <div className="hero__content">
           {/* Información personal y título */}
           <h1 className="hero__name">Cristina Colet</h1>
+
+          {/* Navegación social: Enlaces externos y contacto directo */}
+          <nav className="hero__social">
+            {/* Contacto, Email */}
+            <a
+              href="mailto:coletcristina@gmail.com"
+              className="hero__social-item"
+            >
+              <img src="/email.png" alt="Email" className="hero__social-icon" />
+            </a>
+
+            {/* Acceso a GitHub */}
+            <a
+              href="https://github.com/colet-cristina"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hero__social-item"
+            >
+              <img src="/git.png" alt="GitHub" className="hero__social-icon" />
+            </a>
+
+            {/* Acceso a LinkedIn */}
+            <a
+              href="https://linkedin.com/in/cristina-colet-corredera/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hero__social-item"
+            >
+              <img src="/in.png" alt="LinkedIn" className="hero__social-icon" />
+            </a>
+          </nav>
+
           <h3 className="hero__greeting">Bienvenida a mi dojo digital</h3>
 
           {/* Filosofía de desarrollo */}
@@ -21,7 +53,7 @@ function Hero() {
         </div>
 
         {/* Navegación principal: Enlaces internos */}
-        <nav className="hero__nav js_menu">
+        <nav className="hero__nav">
           <ul className="hero__list">
             <li className="hero__item">
               <Link

@@ -1,33 +1,130 @@
-/* --- HEADER: Estructura y Navegación Principal --- */
+/* --- HEADER: Estructura --- */
 .header {
   background: $header-brown;
   border-bottom: 0.0625rem solid darken($color-red, 5%);
   box-shadow: $shadow-soft;
   position: relative;
   z-index: 10;
-  height: 7rem;
+  height: 6rem;
+  display: flex;
+  align-items: center;
 
   &__container {
-    display: grid;
+    display: flex;
+    justify-content: space-between;
     align-items: center;
-    padding: 0.5rem 1rem;
+    width: 100%;
+    padding: 0 0.6rem;
+    position: relative;
   }
 
   // Identidad visual (Sello Hanko)
   &__seal {
-    height: 3.5rem;
+    height: 3rem;
     width: auto;
-    margin-top: -1rem;
     opacity: 0;
     animation: sealStamp 0.8s ease-out forwards;
-    animation-delay: 1s;
+    animation-delay: 0.5s;
   }
 
-  // Contenedor del título con efecto de pergamino
-  &__title {
-    grid-column: 2;
-    justify-self: start;
+  /* --- BOTÓN HAMBURGUESA (Solo Móvil) --- */
+  &__menu-btn {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 1.8rem;
+    height: 1.2rem;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    z-index: 200;
+
+    .header__menu-bar {
+      width: 100%;
+      height: 0.2rem;
+      background: $color-red;
+      border-radius: 10px;
+      transition: all 0.3s ease-in-out;
+      transform-origin: center;
+    }
+
+    &.is-open {
+      .header__menu-bar {
+        &:nth-child(1) {
+          transform: translateY(0.5rem) rotate(45deg);
+        }
+        &:nth-child(2) {
+          opacity: 0;
+          transform: translateX(1rem);
+        }
+        &:nth-child(3) {
+          transform: translateY(-0.5rem) rotate(-45deg);
+        }
+      }
+    }
+  }
+
+  /* --- NAVEGACIÓN (Desplegable) --- */
+  &__nav {
+    position: absolute;
+    right: 0;
+
+    background: $background-color;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    border: 0.3rem solid $color-red;
+    border-top: 0.125rem solid $color-red;
+    border-bottom: 0.125rem solid $color-red;
+
+    transition: transform 0.4s ease-in-out;
+    transform: translateX(120%); // Escondido a la derecha
+    box-shadow: -5px 0 15px rgba(0, 0, 0, 0.2);
+
+    &.is-active {
+      transform: translateX(2%);
+    }
+  }
+
+  &__list {
+    list-style: none;
     margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__item {
+    list-style: none;
+    display: block;
+    padding: 0rem 0.8rem;
+  }
+
+  &__nav-item {
+    text-decoration: none;
+    color: $color-red;
+    font-family: $font-japanese;
+
+    transition: all 0.3s ease;
+
+    &:active {
+      // Efecto sello al tocar en móvil
+      background-color: $color-red;
+      color: white;
+      padding: 0.5rem 1rem;
+      border-radius: 0.3rem;
+    }
+  }
+
+  /* --- TÍTULO (PERGAMINO) --- */
+  &__title {
+    margin: 0;
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
 
     &-link {
       display: inline-flex;
@@ -39,92 +136,113 @@
         background: $color-red;
         border: 0.0938rem solid $color-red;
         flex-shrink: 0;
-        z-index: 2;
         border-radius: 0.2rem;
+
+        &--left {
+          width: 0.3rem;
+        }
       }
 
       .scroll__content {
         background-color: $background-color;
+
         overflow: hidden;
         white-space: nowrap;
         width: 0;
         display: block;
-        animation: openScroll 1.2s cubic-bezier(0.45, 0.05, 0.55, 0.95) forwards;
-        animation-delay: 2.5s;
+        animation: openScroll 1s cubic-bezier(0.45, 0.05, 0.55, 0.95) forwards;
+        animation-delay: 1.3s;
         border-top: 0.125rem solid $color-red;
         border-bottom: 0.125rem solid $color-red;
-        box-shadow: inset 0.625rem 0 0.625rem -0.3125rem rgba(0, 0, 0, 0.2);
+        box-shadow:
+          inset 1rem 0 1rem -0.5rem rgba(0, 0, 0, 0.2),
+          inset -1rem 0 1rem -0.5rem rgba(0, 0, 0, 0.2);
       }
 
       .scroll__text {
         font-family: $font-japanese;
         font-size: 1.5rem;
+        white-space: nowrap;
         color: $color-red;
         font-weight: bold;
         padding: 0 1rem;
         opacity: 0;
         animation: fadeIn 0.5s forwards;
         animation-delay: 2s;
+        text-shadow: 1px 1px 0px rgba(61, 60, 60, 0.3);
       }
     }
   }
 
-  // Redes sociales con entrada escalonada
-  &__social {
-    grid-column: 2;
-    display: flex;
-    margin-left: 5rem;
-    gap: 0.5rem;
-    justify-content: left;
-    align-items: center;
-
-    &-link {
-      opacity: 0;
-      animation: hankoStamp 0.8s ease-out forwards;
-      transition: transform 0.3s ease;
-
-      &:nth-child(1) {
-        animation-delay: 1.8s;
-      } // Email
-      &:nth-child(2) {
-        animation-delay: 2.1s;
-      } // GitHub
-      &:nth-child(3) {
-        animation-delay: 2.4s;
-      } // LinkedIn
-
-      &:hover {
-        transform: scale(1.2) rotate(5deg);
+  /* --- ----- MEDIA QUERIES (DESKTOP) ----- --- */
+  @media (min-width: 768px) {
+    .header {
+      height: 7rem;
+      &__container {
+        padding: 0 4rem;
       }
-    }
+      &__seal {
+        height: 5rem;
+        margin-right: 3rem;
+      }
+      &__menu-btn {
+        display: none;
+      }
 
-    &-icon {
-      height: 1.5rem;
-      width: auto;
-      display: block;
-    }
-  }
-}
+      &__nav {
+        position: static;
+        height: auto;
+        width: auto;
+        background: transparent;
+        transform: translateX(0);
+        box-shadow: none;
+        border: none;
 
-/* --- MEDIA QUERIES (DESKTOP) --- */
-@media (min-width: 768px) {
-  .header {
-    &__container {
-      display: flex;
-      flex-direction: row;
-      justify-content: space-between;
-      padding: 0 5rem;
-      margin-top: 1rem;
-      height: 5rem;
-    }
-    &__seal {
-      height: 4.5rem;
-    }
-    &__title-link {
-      margin-left: 5rem;
+        &-list {
+          flex-direction: row;
+          gap: 1.5rem;
+        }
 
-      .scroll__text {
-        font-size: 1.8rem;
+        &-item {
+          font-weight: 500;
+          letter-spacing: 0.05rem;
+          padding: 0.5rem 1rem;
+          transition: all 0.3s ease;
+          transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+          border-radius: 0.5rem;
+          border: 0.0625rem solid transparent;
+
+          &:hover {
+            background-color: rgba($color-red, 0.1);
+            color: #ffffff;
+            background-color: $color-red;
+            box-shadow: inset 0 0 0.5rem rgba(0, 0, 0, 0.1);
+          }
+
+          &.is-active {
+            border: 0.0625rem solid $color-red;
+            color: $color-red;
+          }
+        }
+      }
+
+      &__title {
+        justify-content: center;
+      }
+
+      &-link {
+        .scroll__roller {
+          width: 0.8rem;
+          height: 4rem;
+
+          &--left {
+            width: 0.5rem;
+          }
+
+          .scroll__text {
+            font-size: 2rem;
+          }
+        }
       }
     }
   }

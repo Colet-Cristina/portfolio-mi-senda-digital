@@ -45,7 +45,7 @@ function GardenCode() {
   };
 
   return (
-    <section id="projects" className="garden js_garden">
+    <section id="projects" className="garden ">
       {/* Elementos decorativos petálos sakura */}
       <div className="sakura-branch"></div>
       <div className="falling-petals">

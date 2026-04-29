@@ -2,25 +2,15 @@
 
 // --- ------ HEADER ------ ---
 // Simula el impacto de un sello de tinta tradicional japonés
-@keyframes hankoStamp {
-  0% {
-    opacity: 0;
-    transform: scale(3) rotate(-15deg);
-  }
-  70% {
-    opacity: 1;
-    transform: scale(0.9) rotate(-10deg); // Rebote al tocar el "papel"
-  }
-  100% {
-    opacity: 1;
-    transform: scale(1) rotate(-0.5deg);
-  }
-}
 
 @keyframes sealStamp {
   0% {
     opacity: 0;
     transform: scale(3) rotate(-20deg);
+  }
+  70% {
+    opacity: 1;
+    transform: scale(0.9) rotate(-10deg); // Rebote al tocar el "papel"
   }
   100% {
     opacity: 1;
@@ -95,7 +85,7 @@
 
 /* --- UTILIDADES GENERALES --- */
 
-// Transición básica de visibilidad
+// Transición básica de transparencia de 0 a 100%
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -105,7 +95,7 @@
   }
 }
 
-// Entrada vertical con desplazamiento hacia arriba
+// Entrada con subida suavemente mientras se vuelve visible
 @keyframes slideUp {
   from {
     transform: translateY(3.125rem);
@@ -116,7 +106,7 @@
     opacity: 1;
   }
 }
-// tools
+// Versión más corta y sutil de 'slideUp'
 @keyframes fadeInUp {
   from {
     opacity: 0;
@@ -127,7 +117,7 @@
     transform: translateY(0);
   }
 }
-// modal
+// Efecto de "florecimiento"
 @keyframes flowerPop {
   0% {
     opacity: 0;

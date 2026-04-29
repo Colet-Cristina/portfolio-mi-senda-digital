@@ -9,7 +9,7 @@ function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="footer js_footer">
+    <footer className="footer">
       <div className="footer__container">
         {/* Navegación secundaria: Enlaces directos a perfiles profesionales */}
         <div className="footer__social">
