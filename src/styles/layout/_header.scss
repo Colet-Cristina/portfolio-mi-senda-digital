@@ -1,7 +1,7 @@
 /* --- HEADER: Estructura --- */
 .header {
   background: $header-brown;
-  border-bottom: 0.0625rem solid darken($color-red, 5%);
+  border-bottom: 0.06rem solid darken($color-red, 5%);
   box-shadow: $shadow-soft;
   position: relative;
   z-index: 10;
@@ -69,6 +69,7 @@
   &__nav {
     position: absolute;
     right: 0;
+    margin: 0.2rem 0.5;
 
     background: $background-color;
     display: flex;
@@ -100,13 +101,13 @@
   &__item {
     list-style: none;
     display: block;
-    padding: 0rem 0.8rem;
   }
 
   &__nav-item {
     text-decoration: none;
     color: $color-red;
     font-family: $font-japanese;
+    margin: 0.5rem;
 
     transition: all 0.3s ease;
 
@@ -174,17 +175,21 @@
     }
   }
 
-  /* --- ----- MEDIA QUERIES (DESKTOP) ----- --- */
-  @media (min-width: 768px) {
+  /* --- MEDIA QUERIES (DESKTOP) --- */
+  @media (min-width: $breakpoint-tablet) {
     .header {
       height: 7rem;
+
       &__container {
         padding: 0 4rem;
+        flex-direction: row;
       }
+
       &__seal {
         height: 5rem;
         margin-right: 3rem;
       }
+
       &__menu-btn {
         display: none;
       }
@@ -197,32 +202,32 @@
         transform: translateX(0);
         box-shadow: none;
         border: none;
+        display: flex;
+      }
 
-        &-list {
-          flex-direction: row;
-          gap: 1.5rem;
+      &__list {
+        gap: 0.2rem;
+        margin: 3rem;
+        padding: 0;
+      }
+
+      &__nav-item {
+        font-weight: 500;
+        letter-spacing: 0.05rem;
+        padding: 0.5rem 1rem;
+        border-radius: 0.5rem;
+        border: 0.0625rem solid transparent;
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+
+        &:hover {
+          background-color: $color-red;
+          color: $background-color;
+          box-shadow: inset 0 0 0.5rem rgba(0, 0, 0, 0.1);
         }
 
-        &-item {
-          font-weight: 500;
-          letter-spacing: 0.05rem;
-          padding: 0.5rem 1rem;
-          transition: all 0.3s ease;
-          transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-          border-radius: 0.5rem;
-          border: 0.0625rem solid transparent;
-
-          &:hover {
-            background-color: rgba($color-red, 0.1);
-            color: #ffffff;
-            background-color: $color-red;
-            box-shadow: inset 0 0 0.5rem rgba(0, 0, 0, 0.1);
-          }
-
-          &.is-active {
-            border: 0.0625rem solid $color-red;
-            color: $color-red;
-          }
+        &.is-active {
+          border: 0.0625rem solid $color-red;
+          color: $color-red;
         }
       }
 
@@ -230,18 +235,18 @@
         justify-content: center;
       }
 
-      &-link {
+      &__title-link {
         .scroll__roller {
-          width: 0.8rem;
-          height: 4rem;
+          width: 1.2rem;
+          height: 4.5rem;
 
           &--left {
             width: 0.5rem;
           }
+        }
 
-          .scroll__text {
-            font-size: 2rem;
-          }
+        .scroll__text {
+          font-size: 2.5rem;
         }
       }
     }

@@ -116,7 +116,10 @@ function GardenCode() {
       {/* -- MODAL -- */}
       {selectedProject && (
         <div className="modal-overlay" onClick={closeModal}>
-          <div className="modal-content" onClick={(e) => e.stopPropagation()}>
+          <div
+            className="modal-content is-active"
+            onClick={(e) => e.stopPropagation()}
+          >
             <button
               className="modal-close"
               onClick={closeModal}
@@ -152,7 +155,7 @@ function GardenCode() {
                     rel="noopener noreferrer"
                     className="modal-btn"
                   >
-                    Explorar en GitHub
+                    Explorar
                   </a>
                 </div>
               </div>

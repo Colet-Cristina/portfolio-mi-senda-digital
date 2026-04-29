@@ -3,7 +3,7 @@
   background: linear-gradient(to bottom, #a8d5e2 0%, $color-sakura 40%);
   padding: 2.5rem 1rem;
   text-align: center;
-  letter-spacing: 0.0625rem;
+  letter-spacing: 0.06rem;
 
   &__container {
     display: flex;
@@ -12,14 +12,22 @@
     justify-content: flex-end;
   }
 
-  // Estilo compartido para textos y enlaces
-  &__copy,
+  &__copy {
+    color: darken($color-green, 15%);
+    font-size: 0.9rem;
+    font-weight: bold;
+  }
+
   &__link {
     color: darken($color-green, 15%);
     font-size: 0.9rem;
     text-decoration: none;
     font-weight: bold;
     transition: color 0.3s ease;
+
+    &:hover {
+      color: $color-red;
+    }
   }
 
   &__social {
@@ -27,24 +35,10 @@
     justify-content: center;
     gap: 1.5rem;
   }
-
-  &:hover {
-    color: $color-red;
-  }
 }
 
-/* --- COMPONENTES AUXILIARES --- */
-.tech-tag {
-  background-color: rgba($color-green, 0.1);
-  color: $color-green;
-  padding: 0.2rem 0.6rem;
-  border-radius: 0.3rem;
-  font-size: 0.75rem;
-  font-weight: bold;
-}
-
-/* --- RESPONSIVE: Desktop --- */
-@media (min-width: 768px) {
+/* --- MEDIA QUERIES (DESKTOP) --- */
+@media (min-width: $breakpoint-tablet) {
   .footer {
     padding-top: 3rem;
 

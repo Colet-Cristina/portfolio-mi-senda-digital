@@ -159,7 +159,7 @@
   background: $color-stone;
   background: $stone-gradient;
   box-shadow: $shadow-stone;
-  border: $stone-border;
+  border: 0.1rem solid rgba(0, 0, 0, 0.1);
   color: $background-color;
   width: 4rem;
   height: 3.5rem;
@@ -235,7 +235,7 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba($color-sakura, 0.1);
+  background: rgba($color-sakura, 0.2);
   backdrop-filter: blur(8px); // Efecto esmerilado
   display: flex;
   justify-content: center;
@@ -259,9 +259,9 @@
   border-radius: 2rem;
   position: relative;
   padding: 2rem;
-
+  border-radius: 2rem;
   &.is-active {
-    animation: flowerPop 20s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+    animation: fadeInStone 0.5s ease-in-out both;
   }
 }
 .modal-close {
@@ -271,7 +271,7 @@
   background: none;
   border: none;
   font-size: 2rem;
-  color: $color-green;
+  color: #cc1845;
   cursor: pointer;
 }
 
@@ -299,15 +299,37 @@
 
 .modal-btn {
   display: inline-block;
-  padding: 0.8rem 1.5rem;
+  padding: 0.6rem 1.5rem;
   background-color: $color-sakura;
-  color: $text-color;
+  color: $text-modal-btn;
+  font-weight: bold;
   text-decoration: none;
-  border-radius: 2rem;
+  border-radius: 0.5rem;
   transition: transform 0.3s ease;
 
   &:hover {
     transform: scale(1.05);
+  }
+}
+.modal-tech {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-bottom: 2rem;
+}
+.tech-tag {
+  background: rgba(#fae3e9, 0.3);
+  color: $text-modal-btn;
+  padding: 0.4rem 0.8rem;
+  border-radius: 0.3rem;
+  font-size: 0.8rem;
+  font-weight: bold;
+  border: 1px solid $color-sakura;
+  transition: background 0.3s ease;
+
+  &:hover {
+    background: rgba($color-sakura, 1);
   }
 }
 
@@ -345,12 +367,18 @@
       align-items: center;
     }
   }
-  .garden__nav-btn:hover {
-    transform: scale(1.3);
-    transition: transform 0.2s ease;
-    cursor: pointer;
+  .garden__nav-btn {
+    &:hover {
+      transform: scale(1.3);
+      transition: transform 0.2s ease;
+      cursor: pointer;
+    }
+  }
+  .garden__nav-actions {
+    padding-top: 8rem;
+    gap: 15rem;
   }
   .modal-content {
-    width: 30%;
+    width: 50%;
   }
 }

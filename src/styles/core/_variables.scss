@@ -1,3 +1,6 @@
+$breakpoint-tablet: 48rem; // 768px
+$breakpoint-desktop: 75rem; // 1200px
+
 /* --- COLORES TEMÁTICOS --- */
 $background-color: #f3d4a6;
 $header-brown: #eebb6e;
@@ -22,6 +25,7 @@ $color-git: #f1edec;
 
 /* --- TIPOGRAFÍA --- */
 $text-color: #333333;
+$text-modal-btn: #cc1845;
 $font-japanese: "Yuji Syuku", serif;
 $font-body: "Lora", serif;
 

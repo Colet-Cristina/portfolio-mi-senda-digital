@@ -2,7 +2,7 @@
   {
     "id": 1,
     "title": "Fauna Cards",
-    "description": "Explorador creado con JS Vanilla que incluye un juego de memoria.",
+    "description": "Explorador de fauna ibérica con lógica de filtrado y un juego de memoria integrado.",
     "tech": ["HTML5", "CSS3", "JavaScript"],
     "link": "https://github.com/colet-cristina/fauna-cards-platzi-js",
     "image": "/fauna.jpg"
@@ -10,7 +10,7 @@
   {
     "id": 2,
     "title": "Harry Potter",
-    "description": "JS Vanilla Explorer: Explorador dinámico con juego de memoria integrado",
+    "description": "Un archivo de registro mágico desarrollado con React que permite catalogar a los personajes del universo de Harry Potter. La aplicación combina la nostalgia de la saga con una interfaz moderna, reactiva y llena de detalles visuales.",
     "tech": ["React", "React Router", "SASS", "API"],
     "link": "https://github.com/Adalab/modulo-3-evaluacion-final-Colet-Cristina",
     "image": "/harry.jpg"
@@ -18,7 +18,7 @@
   {
     "id": 3,
     "title": "Piedra, Papel, Tijera",
-    "description": "Este proyecto es un ejercicio práctico desarrollado como parte de mi formación para aprender la manipulación del DOM, lógica de control y eventos en JavaScript.",
+    "description": "Un ejercicio fundamental de lógica de programación donde el usuario se enfrenta a la computadora. Este proyecto marca el dominio de la manipulación del DOM y el manejo de eventos asíncronos en JavaScript Vanilla.",
     "tech": ["HTML5", "CSS3", "JavaScript"],
     "link": "https://github.com/Colet-Cristina/modulo-2-evaluacion-intermedia-Colet-Cristina",
     "image": "/juego.png"
