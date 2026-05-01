@@ -10,10 +10,16 @@ function Tools() {
           <li
             key={skill.id}
             className={`tools__item tools__item--${skill.color}`}
-            style={{ animationDelay: `${index * 0.5}s` }}
+            style={{ animationDelay: `${index * 0.2}s` }}
           >
-            <i className={`${skill.icon} tools__icon`}></i>
-            <span className="tools__name">{skill.name}</span>
+            {/* El cordel del cuadro */}
+            <span className="tools__hook"></span>
+
+            {/* Contenedor cuadro */}
+            <div className="tools__frame">
+              <img src={skill.icon} alt={skill.name} className="tools__icon" />
+              <span className="tools__name">{skill.name}</span>
+            </div>
           </li>
         ))}
       </ul>

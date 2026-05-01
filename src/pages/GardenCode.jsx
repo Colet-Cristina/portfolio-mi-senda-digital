@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import GardenFlower from "./GardenFlower";
+import GardenFlower from "../components/GardenFlower";
 import projectsData from "../services/projectsData.json";
 import "../styles/App.scss";
 
@@ -47,8 +47,9 @@ function GardenCode() {
   return (
     <section id="projects" className="garden ">
       {/* Elementos decorativos petálos sakura */}
-      <div className="sakura-branch"></div>
-      <div className="falling-petals">
+      <div className="sakura_branch sakura_branch-left"></div>
+      <div className="sakura_branch sakura_branch-right"></div>
+      <div className="falling_petals">
         <span className="petal"></span>
         <span className="petal"></span>
         <span className="petal"></span>

@@ -1,6 +1,5 @@
 /**
  * Componente Footer
- * Muestra el cierre de la página, enlaces de contacto y la información de copyright.
  * Incluye lógica para mantener el año actualizado automáticamente.
  */
 
@@ -9,7 +8,7 @@ function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="footer">
+    <footer className="footer js_footer">
       <div className="footer__container">
         {/* Navegación secundaria: Enlaces directos a perfiles profesionales */}
         <div className="footer__social">

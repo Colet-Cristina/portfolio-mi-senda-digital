@@ -2,18 +2,18 @@
  * Componente principal de la aplicación (Root Component).
  * Gestiona la estructura global (Layout), los estilos base y el sistema de rutas.
  */
-import "../styles/App.scss";
+import "./styles/App.scss";
 
 // Importación de librerías externas
 import { Routes, Route } from "react-router";
 
 // Importación de componentes
-import Header from "./Header";
-import Hero from "./Hero";
-import Roots from "./Roots";
-import GardenCode from "./GardenCode";
-import Tools from "./Tools";
-import Footer from "./Footer";
+import Header from "./components/layout/Header";
+import Hero from "./pages/Hero";
+import Roots from "./pages/Roots";
+import GardenCode from "./pages/GardenCode";
+import Tools from "./pages/Tools";
+import Footer from "./components/layout/Footer";
 
 /**
  * Función App

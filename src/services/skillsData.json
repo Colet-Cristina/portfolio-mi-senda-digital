@@ -2,56 +2,43 @@
   {
     "id": "html",
     "name": "HTML5",
-    "icon": "fa-brands fa-html5",
-    "color": "red"
+    "icon": "/html.png"
   },
   {
     "id": "css",
     "name": "CSS3",
-    "icon": "fa-brands fa-css3-alt",
-    "color": "blue"
+    "icon": "/css.png"
   },
   {
     "id": "js",
     "name": "JavaScript",
-    "icon": "fa-brands fa-js",
-    "color": "yellow"
+    "icon": "/javaScript.png"
   },
   {
     "id": "react",
     "name": "React",
-    "icon": "fa-brands fa-react",
-    "color": "cyan"
+    "icon": "/react.png"
   },
   {
     "id": "sass",
     "name": "SASS",
-    "icon": "fa-brands fa-sass",
-    "color": "pink"
+    "icon": "/sass.png"
   },
   {
     "id": "node",
     "name": "Node JS",
-    "icon": "fa-brands fa-node-js",
-    "color": "green"
-  },
-  {
-    "id": "express",
-    "name": "Express JS",
-    "icon": "fa-solid fa-server",
-    "color": "grey"
-  },
-  {
-    "id": "mysql",
-    "name": "MySQL",
-    "icon": "fa-solid fa-database",
-    "color": "marine"
+    "icon": "node-js.png"
   },
 
   {
-    "id": "git",
-    "name": "Git",
-    "icon": "fa-brands fa-git-alt",
-    "color": "white"
+    "id": "mysql",
+    "name": "MySQL",
+    "icon": "/mysql.png"
+  },
+
+  {
+    "id": "github",
+    "name": "GitHub",
+    "icon": "/github.png"
   }
 ]
