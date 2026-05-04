@@ -3,12 +3,14 @@
 /* --- Tools --- */
 .tools {
   background-color: $color-pared;
-  height: 100vh;
+  min-height: 100vh;
+  height: auto;
   position: relative;
   display: flex;
   flex-direction: column;
   text-align: center;
   padding: 0;
+  overflow: hidden;
 
   /* --- Elementos de Ambiente --- */
 
@@ -38,7 +40,7 @@
     bottom: 8.5vh;
     left: 0;
     width: 100%;
-    height: 7rem;
+    height: 15%;
     background-color: $color-madera;
 
     border-top: 1rem solid darken($color-madera, 5%);
@@ -72,16 +74,16 @@
     background-color: $tatami-paja;
     z-index: 8;
 
-    // Degradados para el efecto de tejido y bordes
-    background-image: 
+    background-image:
+      linear-gradient(to bottom, rgba(0, 0, 0, 0.4) 0%, transparent 40%),
       // Líneas de los bordes negros
       repeating-linear-gradient(
-        to right,
-        $tatami-borde,
-        $tatami-borde 0.4rem,
-        transparent 0.4rem,
-        transparent 12rem
-      ),
+          to right,
+          $tatami-borde,
+          $tatami-borde 0.4rem,
+          transparent 0.4rem,
+          transparent 12rem
+        ),
       // Efecto de textura de paja
       repeating-linear-gradient(
           to bottom,
@@ -109,7 +111,8 @@
       background-image: url("/katanas.png");
       background-repeat: no-repeat;
       background-position: center bottom 92%; // posición katanas
-      background-size: 20rem; // Tamaño
+      background-size: 25rem 10rem; // Tamaño
+      filter: drop-shadow(0.2rem 0.2rem 0.5rem rgba(0, 0, 0, 0.7));
     }
   }
 
@@ -151,12 +154,42 @@
     justify-content: center;
     transition: $transicion-base;
     position: relative;
+    box-shadow: $Sombra-inner;
+
+    overflow: hidden;
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: -100%;
+      left: -150%; // Empieza escondido a la izquierda
+      width: 250%;
+      height: 1rem;
+      background: linear-gradient(
+        to right,
+        transparent 10%,
+        rgba(255, 255, 255, 1) 50%,
+        // Blanco puro al 100% de opacidad
+        transparent 90%
+      );
+
+      box-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+
+      transform: rotate(35deg);
+      pointer-events: none;
+    }
 
     // Estado interactivo
     &:hover {
       transform: translateY(0.5rem) rotate(2deg);
       box-shadow: 12px 12px 20px rgba(0, 0, 0, 0.15);
       cursor: pointer;
+
+      &::after {
+        left: 100%;
+        top: 150%;
+        transition: all 0.4s ease-out;
+      }
     }
   }
 
@@ -178,28 +211,33 @@
 
   /* --- MEDIA QUERIES (DESKTOP) --- */
   @media (min-width: $breakpoint-tablet) {
-    .tools {
-      &__content {
-        padding: 15rem 2rem 30vh 2rem;
-      }
+    &__content {
+      padding: 15rem 2rem 30vh 2rem;
 
       &--katanas {
-        background-position: center bottom 90%; // posición katanas
-        background-size: 20rem; // Tamaño
-      }
-
-      &__frame {
-        width: 9rem;
-        height: 11rem;
-        padding: 2rem;
-      }
-
-      &__icon {
-        width: 4.5rem;
-        height: 4.5rem;
+        background-position: center bottom 93%; // posición katanas
+        background-size: 35rem 10rem; // Tamaño
       }
     }
 
-    /* Aplicación de la animación de entrada */
+    &__frame {
+      width: 9rem;
+      height: 11rem;
+      padding: 2rem;
+    }
+
+    &__icon {
+      width: 4.5rem;
+      height: 4.5rem;
+    }
+  }
+
+  @media (min-width: $breakpoint-desktop) {
+    &__content {
+      &--katanas {
+        background-position: center bottom 93%;
+        background-size: 40rem 10rem;
+      }
+    }
   }
 }
