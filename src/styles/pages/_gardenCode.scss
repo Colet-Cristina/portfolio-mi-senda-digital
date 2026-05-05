@@ -304,9 +304,18 @@
   font-weight: bold;
 }
 
-.modal-btn {
+.modal-actions {
+  display: flex;
+  gap: 2.5rem;
+  margin-top: 1.5rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.modal-repo,
+.modal-demo {
   display: inline-block;
-  padding: 0.6rem 1.5rem;
+  padding: 0.5rem 1rem;
   background-color: $color-sakura;
   color: $text-modal-btn;
   font-weight: bold;
@@ -316,6 +325,7 @@
 
   &:hover {
     transform: scale(1.05);
+    filter: brightness(1.1); /* Toque de luz */
   }
 }
 .modal-tech {

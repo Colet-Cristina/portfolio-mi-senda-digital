@@ -150,13 +150,23 @@ function GardenCode() {
                 </div>
 
                 <div className="modal-actions">
+                  {selectedProject.demo && (
+                    <a
+                      href={selectedProject.demo}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="modal-demo"
+                    >
+                      Ver Demo
+                    </a>
+                  )}
                   <a
                     href={selectedProject.link}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="modal-btn"
+                    className="modal-repo"
                   >
-                    Explorar
+                    Explorar código
                   </a>
                 </div>
               </div>

@@ -120,9 +120,28 @@
     font-family: $font-japanese;
     font-size: 2.2rem;
     color: $color-madera;
-    margin-bottom: 5rem;
+    margin-bottom: 0rem;
     text-transform: uppercase;
     letter-spacing: 0.3rem;
+  }
+
+  &__kakemono {
+    background-color: $tatami-paja;
+    border-left: 0.2rem solid $color-madera;
+    border-right: 0.2rem solid $color-madera;
+    padding: 0.01rem 1rem;
+    margin: 2rem auto;
+    display: inline-block;
+    box-shadow: 0.3rem 0.3rem 0.6rem rgba(0, 0, 0, 0.3);
+  }
+
+  &__subtitle {
+    margin: 0;
+    font-family: $font-japanese;
+    font-size: 1rem;
+    letter-spacing: 0.3rem;
+    text-transform: uppercase;
+    color: $text-color;
   }
 
   /* Contenedor de la lista */
@@ -215,7 +234,7 @@
       padding: 15rem 2rem 30vh 2rem;
 
       &--katanas {
-        background-position: center bottom 93%; // posición katanas
+        background-position: center bottom 95%; // posición katanas
         background-size: 35rem 10rem; // Tamaño
       }
     }
