@@ -1,12 +1,9 @@
+/* --- GARDEN-CODE: Lista de proyectos dinámicos y un modal con detalles. */
+
 import { useState, useEffect } from "react";
 import GardenFlower from "../components/GardenFlower";
 import projectsData from "../services/projectsData.json";
-import "../styles/App.scss";
 
-/**
- * Componente GardenCode
- * Lista de proyectos dinámicos y un modal con detalles.
- */
 function GardenCode() {
   // Estados
   const [selectedProject, setSelectedProject] = useState(null);

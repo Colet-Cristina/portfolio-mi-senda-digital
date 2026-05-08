@@ -1,5 +1,5 @@
-/**
- * Diseño inspirado en el Lotus Flower SVG de CodePen Matt Farmer
+/* --- GARDEN-FLOWER --- */
+/* Diseño inspirado en el Lotus Flower SVG de CodePen Matt Farmer
  * Enlace original: https://codepen.io/mrfarmer777/pen/RaEeBb
  * Adaptado para React y animaciones dinámicas.
  */

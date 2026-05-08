@@ -11,7 +11,7 @@
   // Apilamiento para capas decorativas
   position: relative;
   overflow: hidden;
-  padding: 4rem 1.5rem;
+  padding: 1rem 1.5rem;
   text-align: center;
 
   // Fondo base: Transición cromática de arena a agua
@@ -132,7 +132,7 @@
     display: flex;
     justify-content: center;
     gap: 1.5rem;
-    margin-bottom: 5rem;
+    margin-bottom: 1rem;
 
     &-item {
       width: 2.5rem;
@@ -182,8 +182,8 @@
     list-style: none;
     justify-content: center;
     align-items: flex-start;
-    gap: 3rem;
-    flex-wrap: wrap;
+    gap: 0.3rem;
+    flex-wrap: nowrap;
   }
 
   &__link {
@@ -192,13 +192,13 @@
     justify-content: center;
     text-decoration: none;
     font-weight: bold;
-    padding: 1rem;
-    width: 9rem;
-    height: 9rem;
+    padding: 0.5rem;
+    width: 6.5rem;
+    height: 6.5rem;
     font-family: $font-body;
 
     // Estética
-    color: $background-color;
+    color: $text-color;
     background-color: $color-stone;
     box-shadow: $shadow-stone;
     border: $stone-border;
@@ -209,18 +209,20 @@
     animation: fadeInStone 1s ease-in-out both;
 
     &--roots {
-      animation-delay: 1.8s;
+      animation-delay: 1.3s;
       rotate: -3deg;
     }
 
     &--garden {
-      animation-delay: 2.4s;
+      animation-delay: 1.4s;
       margin-top: 5rem;
       rotate: 2deg;
     }
 
     &--tools {
-      animation-delay: 3s;
+      width: 8rem;
+      height: 7rem;
+      animation-delay: 1.5s;
       margin-top: -2rem;
       rotate: -1deg;
     }
@@ -240,7 +242,7 @@
   }
 }
 
-/* --- MEDIA QUERIES (DESKTOP) --- */
+/* --- MEDIA QUERIES (TABLET-DESKTOP) --- */
 @media (min-width: $breakpoint-tablet) {
   .hero {
     min-height: 70vh;
@@ -268,6 +270,11 @@
     }
     &__list {
       gap: 6rem;
+    }
+    &__link {
+      width: 10rem;
+      height: 10rem;
+      font-size: 1rem;
     }
   }
 }

@@ -1,7 +1,4 @@
-/**
- * Componente Footer
- * Incluye lógica para mantener el año actualizado automáticamente.
- */
+/* --- FOOTER: Incluye lógica para mantener el año actualizado automáticamente. --- */
 
 function Footer() {
   // Lógica para obtener el año actual

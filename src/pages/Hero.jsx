@@ -2,6 +2,10 @@
 
 import { Link } from "react-router";
 
+import emailIcon from "../images/icons/email.png";
+import gitIcon from "../images/icons/git.png";
+import inIcon from "../images/icons/in.png";
+
 function Hero() {
   return (
     <section id="about" className="hero">
@@ -17,7 +21,7 @@ function Hero() {
               href="mailto:coletcristina@gmail.com"
               className="hero__social-item"
             >
-              <img src="/email.png" alt="Email" className="hero__social-icon" />
+              <img src={emailIcon} alt="Email" className="hero__social-icon" />
             </a>
 
             {/* Acceso a GitHub */}
@@ -27,7 +31,7 @@ function Hero() {
               rel="noopener noreferrer"
               className="hero__social-item"
             >
-              <img src="/git.png" alt="GitHub" className="hero__social-icon" />
+              <img src={gitIcon} alt="GitHub" className="hero__social-icon" />
             </a>
 
             {/* Acceso a LinkedIn */}
@@ -37,11 +41,13 @@ function Hero() {
               rel="noopener noreferrer"
               className="hero__social-item"
             >
-              <img src="/in.png" alt="LinkedIn" className="hero__social-icon" />
+              <img src={inIcon} alt="LinkedIn" className="hero__social-icon" />
             </a>
           </nav>
 
-          <h3 className="hero__greeting">Bienvenida a mi dojo digital</h3>
+          <h3 className="hero__greeting">
+            Te doy la bienvenida a mi dojo digital
+          </h3>
 
           {/* Filosofía de desarrollo */}
           <p className="hero__description">

@@ -1,11 +1,9 @@
-/**
- * Componente Header
- * Gestiona la identidad visual superior, el título principal
- * y los accesos directos a redes sociales/contacto.
- */
+/* --- HEADER: Título principal, accesos  a redes sociales/contacto. */
 
 import { useState } from "react";
 import { Link, useLocation } from "react-router";
+
+import selloHanko from "../../images/design/sello.png";
 
 function Header() {
   const [isOpen, setIsOpen] = useState(false); // Estado para el menú
@@ -20,7 +18,7 @@ function Header() {
       <div className="header__container">
         {/* Identidad visual: Sello personal estilo hanko japonés */}
         <img
-          src="/sello.png"
+          src={selloHanko}
           alt="Sello personal estilo Hanko japonés en color rojo con el nombre de Cristina en caracteres Katakana"
           className="header__seal"
         />
