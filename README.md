@@ -1,6 +1,16 @@
 # 🌱 Semillas de Código | Portfolio Personal
 
-¡Bienvenida/o! Soy desarrolladora Web Junior (Adalab) con una trayectoria que mezcla la paciencia de la naturaleza y la agilidad de la gestión en entornos reales.
+¡Bienvenida/o! Soy Fullstack Developer Junior (Adalab) con una trayectoria que mezcla la paciencia de la naturaleza y la agilidad de la gestión en entornos reales.
+
+Este es el **repositorio principal de mi portfolio**, desarrollado de forma modular utilizando **React Router** para gestionar una navegación multipágina fluida y profesional, ideal para proyectos robustos y escalables.
+
+**Nota de desarrollo:** Este repositorio representa la primera fase de mi portfolio, donde me reté a implementar **React Router Dom** para gestionar la navegación entre páginas independientes. Tras analizar el proyecto, decidí que una arquitectura SPA era más óptima para la experiencia de usuario final. Mantengo este repositorio público como **registro de mi historial de commits y evolución del código**.
+
+> 💡 **Nota:** Este repositorio representa la primera fase de mi portfolio, donde implementé **React Router Dom** para gestionar la navegación entre páginas. Después, creí conveniente realizar una versión con una arquitectura SPA para optimizar la experiencia de usuario.
+>
+> Mantengo este repositorio público como **registro de mi historial de commits y evolución del código**.
+>
+> 👉 Puedes echar un vistazo a la versión SPA definitiva aquí: 👉 (https://github.com/Colet-Cristina/portfolio-CristinaColet)
 
 > "Cultivando soluciones, gestionando entornos, escribiendo código artesanal."
 
@@ -14,9 +24,35 @@ Este portfolio es la narrativa de mi transición hacia el desarrollo tech, basad
 - **Gestión bajo presión:** Mi etapa en comedores escolares me dio la agilidad para resolver imprevistos en tiempo real y trabajar en equipo.
 - **Artesanía Digital:** Un enfoque en el detalle, la limpieza del código y la armonía visual.
 
+# 🛠️ Arquitectura del Proyecto
+
+Para materializar esta filosofía, el portfolio sigue una estructura limpia, modular y escalable de Single Page Application (SPA), basada fielmente en las buenas prácticas aprendidas en **Adalab**:
+
+```text
+├── components/          # Componentes visuales reutilizables
+│   ├── layout/          # Estructuras globales (Header, Footer)
+│   └── GardenFlower.jsx # Componentes interactivos del jardín
+│
+├── pages/               # Secciones principales de la SPA (Vistas)
+│   ├── Hero.jsx         # Bienvenida y presentación potente
+│   ├── Roots.jsx        # Mis raíces (Bio e Historia)
+│   ├── GardenCode.jsx   # El jardín de código (Showroom de proyectos)
+│   └── Tools.jsx        # Tecnologías y herramientas (El Dojo de habilidades)
+│
+├── services/            # Capa de datos y lógica dinámica
+│   ├── projectsData.json
+│   └── skillsData.json
+│
+└── styles/              # Arquitectura SASS
+    ├── core/            # Variables globales, reset y animaciones
+    ├── layout/          # Estilos de la estructura general
+    └── pages/           # Estilos específicos de cada sección del Dojo
+
+```
+
 ## 🛠️ Herramientas (Stack Tecnológico)
 
-### 🎨 Front-End
+### 🎨 Tecnologías utilizadas en este proyecto
 
 ![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white)
 ![CSS3](https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white)
@@ -25,13 +61,7 @@ Este portfolio es la narrativa de mi transición hacia el desarrollo tech, basad
 ![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB)
 ![Vite](https://img.shields.io/badge/vite-%23646CFF.svg?style=for-the-badge&logo=vite&logoColor=white)
 
-### ⚙️ Back-End & DB
-
-![NodeJS](https://img.shields.io/badge/node.js-6DA55F?style=for-the-badge&logo=node.js&logoColor=white)
-![Express.js](https://img.shields.io/badge/express.js-%23404d59.svg?style=for-the-badge&logo=express&logoColor=%2361DAFB)
-![MySQL](https://img.shields.io/badge/mysql-%2300f.svg?style=for-the-badge&logo=mysql&logoColor=white)
-
-### 🚀 Herramientas
+### 🚀 Control de Versiones & Despliegue
 
 ![Git](https://img.shields.io/badge/git-%23F05033.svg?style=for-the-badge&logo=git&logoColor=white)
 ![GitHub](https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white)
@@ -42,6 +72,28 @@ Este portfolio es la narrativa de mi transición hacia el desarrollo tech, basad
 _Selección de proyectos cultivados con mimo y código limpio._
 
 ---
+
+## 📦 Instalación y Arranque Local
+
+Si quieres ejecutar este proyecto en tu máquina local, sigue estos pasos:
+
+Clona el repositorio:
+
+```bash
+git clone [https://github.com/Colet-Cristina/portfolio-CristinaColet.git]
+```
+
+Instala las dependencias del proyecto:
+
+```bash
+npm install
+```
+
+Arranca el servidor de desarrollo (Vite):
+
+```bash
+npm run dev
+```
 
 ## 👩🏻‍💻 Sobre mí
 
@@ -54,6 +106,8 @@ Mi objetivo es seguir cultivando mis habilidades y aportar mi capacidad de gesti
 Si quieres saber más o crees que mi forma de cultivar código encaja con tu equipo, ¡hablemos!
 
 [LinkedIn](https://www.linkedin.com/feed/)
+
+[GitHub](https://github.com/Colet-Cristina)
 
 > **💡 Dato curioso:** Al igual que en un vivero, este código ha sido regado diariamente con café y muchas horas de depuración para asegurar que cada "rama" de lógica crezca en su lugar.
 
