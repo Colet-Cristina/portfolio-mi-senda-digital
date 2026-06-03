@@ -51,10 +51,10 @@ function Hero() {
 
           {/* Filosofía de desarrollo */}
           <p className="hero__description">
-            Inspirada en la calma de un jardín Zen, me esfuerzo por escribir
-            código limpio y ordenado, basándome en la disciplina y el
-            aprendizaje de una onna-musha; un camino que inicié en Adalab y que
-            sigo recorriendo cada día.
+            Cambié de rumbo para convertir mi curiosidad tecnológica en mi
+            profesión. Tras mi formación en Adalab, busco aportar mi dedicación
+            en proyectos reales, y seguir aprendiendo y evolucionando como
+            desarrolladora Fullstack.
           </p>
         </div>
 

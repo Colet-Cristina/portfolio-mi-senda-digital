@@ -11,7 +11,7 @@
   color: $text-color;
 
   background-image: url("/src/images/design/background-movil.png");
-  background-position: center;
+  background-position: inherit;
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: scroll;
@@ -75,26 +75,24 @@
   }
 
   &__text {
+    font-weight: bolder;
+    font-size: 1.25rem;
     max-width: 65%;
     line-height: 1.6;
+
     margin-bottom: 1rem;
     opacity: 0;
     animation: fadeInUp 1s ease forwards;
 
-    /* Posicionamiento por bloques */
-    &:nth-of-type(1) {
+    &--right,
+    &--left {
       align-self: flex-end;
       text-align: right;
+      margin-top: 3rem;
       animation-delay: 0.8s;
     }
 
-    &:nth-of-type(2) {
-      align-self: flex-start;
-      text-align: left;
-      animation-delay: 1s;
-    }
-
-    &--highlight {
+    &--center {
       align-self: center;
       text-align: center;
       max-width: 90%;
@@ -131,18 +129,21 @@
     &__text {
       max-width: 35rem;
       margin-bottom: 2rem;
+      font-size: 1.25rem;
 
-      &:nth-of-type(1),
-      &:nth-of-type(2) {
-        align-self: flex-start;
+      &--right {
+        align-self: flex-end;
         text-align: right;
         margin-top: 0;
       }
-
-      &--highlight {
+      &--left {
         align-self: flex-start;
-        text-align: left;
-        background-color: transparent;
+        margin-top: 0;
+      }
+
+      &--center {
+        align-self: center;
+        text-align: center;
         padding: 0;
         margin-top: 1rem;
       }

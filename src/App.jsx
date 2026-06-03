@@ -26,7 +26,7 @@ function App() {
       <Header />
 
       {/* Área principal de contenido */}
-      <main className="main _main">
+      <main className="main">
         <Routes>
           {/* Ruta de inicio: Presentación principal del portfolio */}
           <Route path="/" element={<Hero />} />
